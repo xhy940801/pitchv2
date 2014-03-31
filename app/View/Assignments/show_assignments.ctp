@@ -32,6 +32,9 @@ else
 						<tr><th cospan="2"><?php echo '任务'.$i; ?></th></tr>
 					</thead>
 					<tr>
+						<td>所属项目名称：</td><td><?php echo $assignment['Project']['name']; ?></td>
+					</tr>
+					<tr>
 						<td>所需人数：</td><td><?php echo $assignment['Assignment']['the_number_needed']; ?></td>
 					</tr>
 					<tr>
@@ -52,7 +55,7 @@ else
 				<div class="accordion-group">
 					<div class="accordion-heading">
 						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="<?php echo '#collapse'.$i; ?>">
-							详细信息:
+							人员信息：
 						</a>
 					</div>
 					<div id="<?php echo 'collapse'.$i; ?>" class="accordion-body collapse">
@@ -60,12 +63,10 @@ else
 							<table class="table">
 								<thead>
 									<tr>
-										<th>任务ID:</th><th><?php echo $assignment['Assignment']['id']; ?></th>
+										<th>任务人员信息：</th>
 									</tr>
 								</thead>
-								<tr>
-									<td>所属项目名称：</td><td><?php echo $assignment['Project']['name']; ?></td>
-								</tr>
+								
 							</table>
 						</div>
         			</div>

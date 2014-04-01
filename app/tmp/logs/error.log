@@ -3895,3 +3895,400 @@ Stack Trace:
 #3 /var/www/pitchv2/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2014-04-02 00:08:33 Error: Fatal Error (64): Default value for parameters with a class type hint can only be NULL in [E:\WAMP\www\pitchv2\app\View\Helper\AuthorityHelper.php, line 32]
+2014-04-02 00:08:33 Error: [FatalErrorException] Default value for parameters with a class type hint can only be NULL
+Request URL: /pitchv2/Assignments/showAssignments/7
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(64, 'Default value f...', 'E:\WAMP\www\pit...', 32)
+#1 [internal function]: ErrorHandler::handleError(64, 'Default value f...', 'E:\WAMP\www\pit...', 32, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 64, 'Default value f...', 'E:\WAMP\www\pit...', 32, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-02 00:25:27 Error: Fatal Error (64): Default value for parameters with a class type hint can only be NULL in [E:\WAMP\www\pitchv2\app\View\Helper\AuthorityHelper.php, line 32]
+2014-04-02 00:25:27 Error: [FatalErrorException] Default value for parameters with a class type hint can only be NULL
+Request URL: /pitchv2/Assignments/showAssignments/7
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(64, 'Default value f...', 'E:\WAMP\www\pit...', 32)
+#1 [internal function]: ErrorHandler::handleError(64, 'Default value f...', 'E:\WAMP\www\pit...', 32, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 64, 'Default value f...', 'E:\WAMP\www\pit...', 32, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-02 00:29:15 Error: Fatal Error (1): Call to a member function check() on a non-object in [E:\WAMP\www\pitchv2\app\View\Helper\AuthorityHelper.php, line 39]
+2014-04-02 00:29:15 Error: [FatalErrorException] Call to a member function check() on a non-object
+Request URL: /pitchv2/Assignments/showAssignments/7
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'E:\WAMP\www\pit...', 39)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'E:\WAMP\www\pit...', 39, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'E:\WAMP\www\pit...', 39, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-02 00:55:26 Error: [MissingControllerException] Controller class MatchsController could not be found.
+Exception Attributes: array (
+  'class' => 'MatchsController',
+  'plugin' => NULL,
+)
+Request URL: /pitchv2/Matchs/register/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\app\webroot\index.php(113): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-02 00:55:36 Error: [MissingControllerException] Controller class MatchesController could not be found.
+Exception Attributes: array (
+  'class' => 'MatchesController',
+  'plugin' => NULL,
+)
+Request URL: /pitchv2/Matches/register/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\app\webroot\index.php(113): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-02 00:56:13 Error: [MissingViewException] View file "E:\WAMP\www\pitchv2\app\View\Matches\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'E:\\WAMP\\www\\pitchv2\\app\\View\\Matches\\register.ctp',
+)
+Request URL: /pitchv2/Matches/register/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\WAMP\www\pitchv2\app\webroot\index.php(113): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-02 01:14:41 Error: [MissingControllerException] Controller class MatchsController could not be found.
+Exception Attributes: array (
+  'class' => 'MatchsController',
+  'plugin' => NULL,
+)
+Request URL: /pitchv2/Matchs/register/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-02 01:21:58 Error: [MissingControllerException] Controller class Pitchv2Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Pitchv2Controller',
+  'plugin' => NULL,
+)
+Request URL: /pitchv2/pitchv2/Matches/register/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-02 01:22:52 Error: [MissingControllerException] Controller class Pitchv2Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Pitchv2Controller',
+  'plugin' => NULL,
+)
+Request URL: /pitchv2/pitchv2/Matches/register/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-02 01:23:26 Error: [MissingControllerException] Controller class Pitchv2Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Pitchv2Controller',
+  'plugin' => NULL,
+)
+Request URL: /pitchv2/pitchv2/pitchv2/Matches/register/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-02 01:28:38 Error: [MissingActionException] Action MatchesController::Assignments() could not be found.
+Exception Attributes: array (
+  'controller' => 'MatchesController',
+  'action' => 'Assignments',
+)
+Request URL: /pitchv2/matches/Assignments/showAssignments/7
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#2 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-02 01:30:13 Error: [MissingActionException] Action MatchesController::matches() could not be found.
+Exception Attributes: array (
+  'controller' => 'MatchesController',
+  'action' => 'matches',
+)
+Request URL: /pitchv2/matches/matches/Assignments/showAssignments/7
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#2 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-02 01:30:36 Error: [MissingActionException] Action MatchesController::matches() could not be found.
+Exception Attributes: array (
+  'controller' => 'MatchesController',
+  'action' => 'matches',
+)
+Request URL: /pitchv2/matches/matches/matches/Assignments/showAssignments/7
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#2 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-02 01:30:58 Error: Fatal Error (4): syntax error, unexpected '}' in [E:\WAMP\www\pitchv2\app\Controller\AppController.php, line 84]
+2014-04-02 01:30:58 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /pitchv2/Assignments/showAssignments/7
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 84)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 84, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\WAMP\www\pit...', 84, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-02 01:33:46 Error: Fatal Error (4): syntax error, unexpected 'if' (T_IF) in [E:\WAMP\www\pitchv2\app\Controller\AppController.php, line 75]
+2014-04-02 01:33:46 Error: [FatalErrorException] syntax error, unexpected 'if' (T_IF)
+Request URL: /pitchv2/Matches/register/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 75)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 75, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\WAMP\www\pit...', 75, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-02 02:52:59 Error: [MissingActionException] Action AssignmentsController::Assignments() could not be found.
+Exception Attributes: array (
+  'controller' => 'AssignmentsController',
+  'action' => 'Assignments',
+)
+Request URL: /pitchv2/Assignments/Assignments/recommendUser
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#2 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-02 03:10:36 Error: Fatal Error (4): syntax error, unexpected '}' in [E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php, line 104]
+2014-04-02 03:10:36 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /pitchv2/Assignments/showAssignments/7
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 104)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 104, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\WAMP\www\pit...', 104, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-02 03:18:03 Error: [MissingControllerException] Controller class AssignmentController could not be found.
+Exception Attributes: array (
+  'class' => 'AssignmentController',
+  'plugin' => NULL,
+)
+Request URL: /pitchv2/Assignment/recommend/4
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-02 03:18:03 Error: [MissingActionException] Action AssignmentsController::recommendUser() could not be found.
+Exception Attributes: array (
+  'controller' => 'AssignmentsController',
+  'action' => 'recommendUser',
+)
+Request URL: /pitchv2/Assignments/recommendUser
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#2 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-02 03:18:41 Error: [MissingControllerException] Controller class AssignmentController could not be found.
+Exception Attributes: array (
+  'class' => 'AssignmentController',
+  'plugin' => NULL,
+)
+Request URL: /pitchv2/Assignment/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-02 03:18:41 Error: [MissingActionException] Action AssignmentsController::recommendUser() could not be found.
+Exception Attributes: array (
+  'controller' => 'AssignmentsController',
+  'action' => 'recommendUser',
+)
+Request URL: /pitchv2/Assignments/recommendUser
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#2 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-02 03:22:31 Error: [MissingActionException] Action AssignmentsController::recommendUser() could not be found.
+Exception Attributes: array (
+  'controller' => 'AssignmentsController',
+  'action' => 'recommendUser',
+)
+Request URL: /pitchv2/Assignments/recommendUser
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#2 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-02 03:22:42 Error: [MissingActionException] Action AssignmentsController::recommendUser() could not be found.
+Exception Attributes: array (
+  'controller' => 'AssignmentsController',
+  'action' => 'recommendUser',
+)
+Request URL: /pitchv2/Assignments/recommendUser
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#2 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-02 03:22:51 Error: [MissingViewException] View file "E:\WAMP\www\pitchv2\app\View\Assignments\recommend.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'E:\\WAMP\\www\\pitchv2\\app\\View\\Assignments\\recommend.ctp',
+)
+Request URL: /pitchv2/Assignments/recommend
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-02 03:24:49 Error: [MissingActionException] Action AssignmentsController::recommendUser() could not be found.
+Exception Attributes: array (
+  'controller' => 'AssignmentsController',
+  'action' => 'recommendUser',
+)
+Request URL: /pitchv2/Assignments/recommendUser
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#2 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-02 03:25:16 Error: [MissingControllerException] Controller class AssignmentController could not be found.
+Exception Attributes: array (
+  'class' => 'AssignmentController',
+  'plugin' => NULL,
+)
+Request URL: /pitchv2/Assignment/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-02 03:25:28 Error: [MissingControllerException] Controller class AssignmentController could not be found.
+Exception Attributes: array (
+  'class' => 'AssignmentController',
+  'plugin' => NULL,
+)
+Request URL: /pitchv2/Assignment/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-02 03:25:57 Error: Fatal Error (1): Call to undefined method AssignmentsController::find() in [E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php, line 102]
+2014-04-02 03:25:57 Error: [FatalErrorException] Call to undefined method AssignmentsController::find()
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\WAMP\www\pit...', 102)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\WAMP\www\pit...', 102, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\WAMP\www\pit...', 102, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-02 03:26:13 Error: Fatal Error (1): Call to undefined method AssignmentsController::find() in [E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php, line 102]
+2014-04-02 03:26:13 Error: [FatalErrorException] Call to undefined method AssignmentsController::find()
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\WAMP\www\pit...', 102)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\WAMP\www\pit...', 102, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\WAMP\www\pit...', 102, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-02 03:30:36 Error: Fatal Error (4): syntax error, unexpected '}' in [E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php, line 105]
+2014-04-02 03:30:36 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 105)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 105, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\WAMP\www\pit...', 105, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-02 03:30:43 Error: Fatal Error (4): syntax error, unexpected '}' in [E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php, line 105]
+2014-04-02 03:30:43 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 105)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 105, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\WAMP\www\pit...', 105, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-02 03:30:57 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` FR...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` FR...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` FR...')
+#4 [internal function]: DboSource->query('SELECT `num` FR...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(131): Model->query('SELECT `num` FR...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(104): AssignmentsController->recommendUser('a0', 'a0')
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-02 03:31:09 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` FR...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` FR...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` FR...')
+#4 [internal function]: DboSource->query('SELECT `num` FR...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(131): Model->query('SELECT `num` FR...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(104): AssignmentsController->recommendUser('a0', 'a0')
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-02 03:56:46 Error: Fatal Error (1): Call to undefined method AuthBBT::getAllUser() in [E:\WAMP\www\pitchv2\app\Controller\AppController.php, line 131]
+2014-04-02 03:56:46 Error: [FatalErrorException] Call to undefined method AuthBBT::getAllUser()
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\WAMP\www\pit...', 131)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\WAMP\www\pit...', 131, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\WAMP\www\pit...', 131, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-02 03:57:40 Error: Fatal Error (1): Call to undefined method AuthBBT::getAllUser() in [E:\WAMP\www\pitchv2\app\Controller\AppController.php, line 131]
+2014-04-02 03:57:40 Error: [FatalErrorException] Call to undefined method AuthBBT::getAllUser()
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\WAMP\www\pit...', 131)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\WAMP\www\pit...', 131, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\WAMP\www\pit...', 131, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-02 03:58:27 Error: Fatal Error (1): Call to undefined method AuthBBT::getAllUser() in [E:\WAMP\www\pitchv2\app\Controller\AppController.php, line 131]
+2014-04-02 03:58:27 Error: [FatalErrorException] Call to undefined method AuthBBT::getAllUser()
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\WAMP\www\pit...', 131)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\WAMP\www\pit...', 131, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\WAMP\www\pit...', 131, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-02 03:59:01 Error: Fatal Error (1): Call to undefined method AuthBBT::getAllUser() in [E:\WAMP\www\pitchv2\app\Controller\AppController.php, line 131]
+2014-04-02 03:59:01 Error: [FatalErrorException] Call to undefined method AuthBBT::getAllUser()
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\WAMP\www\pit...', 131)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\WAMP\www\pit...', 131, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\WAMP\www\pit...', 131, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-02 03:59:35 Error: Fatal Error (1): Call to undefined method AuthBBT::getAllUser() in [E:\WAMP\www\pitchv2\app\Controller\AppController.php, line 131]
+2014-04-02 03:59:35 Error: [FatalErrorException] Call to undefined method AuthBBT::getAllUser()
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\WAMP\www\pit...', 131)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\WAMP\www\pit...', 131, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\WAMP\www\pit...', 131, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

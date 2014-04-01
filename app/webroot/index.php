@@ -23,8 +23,6 @@
 /**
  * Use the DS to separate the directories in other defines
  */
-if(!defined('MY_WEB_ROOT'))
-	define('MY_WEB_ROOT', '/pitchv2/');
 if (!defined('DS')) {
 	define('DS', DIRECTORY_SEPARATOR);
 }

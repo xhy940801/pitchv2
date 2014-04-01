@@ -1,3 +1,4 @@
+<?php echo $this->Html->script('recommendSystem'); ?>
 <div id="paddinHead">
 </div>
 <?php
@@ -64,7 +65,7 @@ else
 								<thead>
 									<caption><strong>已签到人员：</strong></caption>
 									<tr>
-										<th>姓名：</th><th>学号：</th><th>部门：</th><th>操作：</th>
+										<th>姓名：</th><th>学号：</th><th>性别：</th><th>部门：</th><th>手机：</th><th>短号：</th><th>操作：</th>
 									</tr>
 								</thead>
 								<?php foreach ($assignment['MatchSigned'] as $match)
@@ -74,15 +75,20 @@ else
 								<tr>
 									<td><?=$user['Detail']['name']?></td>
 									<td><?=$user['User']['num']?></td>
+									<td><?=$user['Detail']['sex']?></td>
 									<td><?=$user['Department']['name'];?></td>
-									<td></td>
+									<td><?=$user['Detail']['mobile']?></td>
+									<td><?=$user['Detail']['shortMobile']?></td>
+									<td>
+										<?=$this->Authority->npLink('删除', array('controller' => 'Matches', 'action' => 'del', $match['id']))?>
+									</td>
 								</tr>
 								<?php 
 								}
 								unset($match);
 								?>
 								<tr>
-									<th>总计人数：</th><td colspan="3"><?=count($assignment['MatchSigned'])?></td>
+									<th>总计人数：</th><td colspan="6"><?=count($assignment['MatchSigned'])?></td>
 								</tr>
 							</table>
 
@@ -104,17 +110,23 @@ else
 									<td><?=$user['Department']['name'];?></td>
 									<td><?=$user['Detail']['mobile']?></td>
 									<td><?=$user['Detail']['shortMobile']?></td>
-									<td></td>
+									<td>
+										<?=$this->Authority->npLink('签到', array('controller' => 'Matches', 'action' => 'register', $match['id']))?>
+										<?=$this->Authority->npLink('删除', array('controller' => 'Matches', 'action' => 'del', $match['id']))?>
+									</td>
 								</tr>
 								<?php 
 								}
 								unset($match);
 								?>
 								<tr>
-									<th>总计人数：</th><td colspan="3"><?=count($assignment['MatchUnsigned'])?></td>
+									<th>总计人数：</th><td colspan="6"><?=count($assignment['MatchUnsigned'])?></td>
 								</tr>
 							</table>
-							
+							<a class="recommendUserButton" href="<?=$this->webroot.'Assignments/recommend/'.$assignment['Assignment']['id']?>">
+								推荐名单
+							</a>
+							<div class="recommendUser"></div>
 						</div>
         			</div>
     			</div>

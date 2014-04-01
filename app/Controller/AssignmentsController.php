@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 App::uses('AppController', 'Controller');
 
@@ -18,7 +18,6 @@ class AssignmentsController extends AppController
 	public function beforeFilter()
 	{
 		parent::beforeFilter();
-		debug('assC');
 		$this->helpers = array(
 		'Js', 'Html', 'Form', 'Time', 'Leisure', 'App',
 		'Authority' => array(
@@ -95,36 +94,88 @@ class AssignmentsController extends AppController
 		}
 	}
 
-	public function recommendUser()
+	public function recommend($id = null)
 	{
-		if($this->request->is('post')/* && $this->checkInPutData($this->request->data)*/)
+		$this->layout = 'blank';
+		if($id != null)
 		{
-			$this->loadModel('Timetable');
-			$this->loadModel('User');
-			$timeTablesTableName = $this->Timetable->tablePrefix . $this->Timetable->useTable;
-			$usersTableName = $this->Timetable->tablePrefix . $this->User->useTable;
-			debug($this->request->data);
-			$leisures = $this->getLeisureList($this->request->data['start_leisure'],$this->request->data['end_leisure']);
-			if(count($leisures) > 0)
+			$assignment = $this->Assignment->find('first', array('conditions' => array('Assignment.id' => $id), 'recursive' => 1));
+			debug($assignment);
+			$the_number_needed = $assignment['Assignment']['the_number_needed'] - count($assignment['Match']);
+			$users = $this->recommendUser($assignment['Assignment']['start_leisure'], $assignment['Assignment']['end_leisure'], $the_number_needed);
+			$userList = array();
+			for($i=0;$i<count($users);++$i)
 			{
-				$query = 'SELECT `num` FROM `'.$usersTableName.'` WHERE `num` IN ( ';
-				$query .= 'SELECT `'.$this->Timetable->tablePrefix.'no_lasting_table0`.`user_num` FROM ';
-				for($i=0;$i<count($leisures);++$i)
-				{
-					$query .= '(SELECT  `user_num` ,  `leisure` , `checked` FROM  `'.$timeTablesTableName.'` WHERE  `leisure` = \''.$leisures[$i].'\' AND `checked` = \'1\') AS '.$this->Timetable->tablePrefix.'no_lasting_table'.strval($i).', ';
-				}
-				$query = substr($query, 0,strlen($query) - 2);
-				$query .= ' WHERE 1 AND ';
-				for($i=1;$i<count($leisures);++$i)
-				{
-					$query .= $this->Timetable->tablePrefix.'no_lasting_table'.strval($i-1).'.user_num'.' = '.$this->Timetable->tablePrefix.'no_lasting_table'.strval($i).'.user_num'.' AND ';
-				}
-				$query = substr($query, 0,strlen($query) - 5);
-				$query .= ') ORDER BY `pitch_times` DESC LIMIT '.strval($this->request->data['the_number_needed']);
-				$row = $this->Timetable->query($query);
+				$userList[$i] = $users[$i]['pitchv2_users']['num'];
 			}
+			$userList[$i] = '201230620437';
+			$userInfoList = $this->getSomeUserInfoByNum($userList);
+			debug($userList);
+			debug($userInfoList);
 		}
 	}
+
+	private function recommendUser($start_leisure, $end_leisure, $the_number_needed)
+	{
+		$this->loadModel('Timetable');
+		$this->loadModel('User');
+		$timeTablesTableName = $this->Timetable->tablePrefix . $this->Timetable->useTable;
+		$usersTableName = $this->Timetable->tablePrefix . $this->User->useTable;
+		$leisures = $this->getLeisureList($start_leisure, $end_leisure);
+		if(count($leisures) > 0)
+		{
+			$query = 'SELECT `num` FROM `'.$usersTableName.'` WHERE `num` IN ( ';
+			$query .= 'SELECT `'.$this->Timetable->tablePrefix.'no_lasting_table0`.`user_num` FROM ';
+			for($i=0;$i<count($leisures);++$i)
+			{
+				$query .= '(SELECT  `user_num` ,  `leisure` , `checked` FROM  `'.$timeTablesTableName.'` WHERE  `leisure` = \''.$leisures[$i].'\' AND `checked` = \'1\') AS '.$this->Timetable->tablePrefix.'no_lasting_table'.strval($i).', ';
+			}
+			$query = substr($query, 0,strlen($query) - 2);
+			$query .= ' WHERE 1 AND ';
+			for($i=1;$i<count($leisures);++$i)
+			{
+				$query .= $this->Timetable->tablePrefix.'no_lasting_table'.strval($i-1).'.user_num'.' = '.$this->Timetable->tablePrefix.'no_lasting_table'.strval($i).'.user_num'.' AND ';
+			}
+			$query = substr($query, 0,strlen($query) - 5);
+			$query .= ') ORDER BY `pitch_times` DESC LIMIT '.strval($the_number_needed);
+			debug($query);
+			$row = $this->Timetable->query($query);
+			debug($row);
+			return $row;
+		}
+		return array();
+	}
+
+	// public function recommendUser()
+	// {
+	// 	if($this->request->is('post')/* && $this->checkInPutData($this->request->data)*/)
+	// 	{
+	// 		$this->loadModel('Timetable');
+	// 		$this->loadModel('User');
+	// 		$timeTablesTableName = $this->Timetable->tablePrefix . $this->Timetable->useTable;
+	// 		$usersTableName = $this->Timetable->tablePrefix . $this->User->useTable;
+	// 		debug($this->request->data);
+	// 		$leisures = $this->getLeisureList($this->request->data['start_leisure'],$this->request->data['end_leisure']);
+	// 		if(count($leisures) > 0)
+	// 		{
+	// 			$query = 'SELECT `num` FROM `'.$usersTableName.'` WHERE `num` IN ( ';
+	// 			$query .= 'SELECT `'.$this->Timetable->tablePrefix.'no_lasting_table0`.`user_num` FROM ';
+	// 			for($i=0;$i<count($leisures);++$i)
+	// 			{
+	// 				$query .= '(SELECT  `user_num` ,  `leisure` , `checked` FROM  `'.$timeTablesTableName.'` WHERE  `leisure` = \''.$leisures[$i].'\' AND `checked` = \'1\') AS '.$this->Timetable->tablePrefix.'no_lasting_table'.strval($i).', ';
+	// 			}
+	// 			$query = substr($query, 0,strlen($query) - 2);
+	// 			$query .= ' WHERE 1 AND ';
+	// 			for($i=1;$i<count($leisures);++$i)
+	// 			{
+	// 				$query .= $this->Timetable->tablePrefix.'no_lasting_table'.strval($i-1).'.user_num'.' = '.$this->Timetable->tablePrefix.'no_lasting_table'.strval($i).'.user_num'.' AND ';
+	// 			}
+	// 			$query = substr($query, 0,strlen($query) - 5);
+	// 			$query .= ') ORDER BY `pitch_times` DESC LIMIT '.strval($this->request->data['the_number_needed']);
+	// 			$row = $this->Timetable->query($query);
+	// 		}
+	// 	}
+	// }
 
 	private function getLeisureList($startLeisure,$endLeisure)
 	{

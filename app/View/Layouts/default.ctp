@@ -8,13 +8,13 @@
 	<link href="/pitchv2/bbtFavicon.ico" type="image/x-icon" rel="icon" />
 	<link href="/pitchv2/bbtFavicon.ico" type="image/x-icon" rel="shortcut icon" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="<?php echo MY_WEB_ROOT.'viewPlugins/bootstrap/css/bootstrap.min.css'; ?>"rel="stylesheet" media="screen">
-	<link href="<?php echo MY_WEB_ROOT.'viewPlugins/bootstrap/css/bootstrap-responsive.min.css'; ?>" rel="stylesheet">
-	<link href="<?php echo MY_WEB_ROOT.'viewPlugins/bootstrap/css/doc.css'; ?>"rel="stylesheet" media="screen">
+	<link href="<?php echo $this->webroot.'viewPlugins/bootstrap/css/bootstrap.min.css'; ?>"rel="stylesheet" media="screen">
+	<link href="<?php echo $this->webroot.'viewPlugins/bootstrap/css/bootstrap-responsive.min.css'; ?>" rel="stylesheet">
+	<link href="<?php echo $this->webroot.'viewPlugins/bootstrap/css/doc.css'; ?>"rel="stylesheet" media="screen">
 	<?php echo $this->Html->css('BBT'); ?>
 	<?php echo $this->Html->script('jQuery_v1.10.2'); ?>
 	
-	<script src="<?php echo MY_WEB_ROOT.'viewPlugins/bootstrap/js/bootstrap.min.js'; ?>"></script>
+	<script src="<?php echo $this->webroot.'viewPlugins/bootstrap/js/bootstrap.min.js'; ?>"></script>
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -52,9 +52,9 @@
 		<div class="row">
 			<div class="span3 bs-docs-sidebar hidden-phone">
 				<ul class="nav nav-list bs-docs-sidenav">
-					<li><a href="<?php echo MY_WEB_ROOT.'Users/showUserInformation'; ?>"><i class="icon-chevron-right is-selected"></i>个人资料</a></li>
-					<li><a href="<?php echo MY_WEB_ROOT.'Timetables/edit'; ?>"><i class="icon-chevron-right is-selected"></i>修改课表</a></li>
-					<li><a href="<?php echo MY_WEB_ROOT.'Users/logout'; ?>"><i class="icon-chevron-right is-selected"></i>注销</a></li>
+					<li><a href="<?php echo $this->webroot.'Users/showUserInformation'; ?>"><i class="icon-chevron-right is-selected"></i>个人资料</a></li>
+					<li><a href="<?php echo $this->webroot.'Timetables/edit'; ?>"><i class="icon-chevron-right is-selected"></i>修改课表</a></li>
+					<li><a href="<?php echo $this->webroot.'Users/logout'; ?>"><i class="icon-chevron-right is-selected"></i>注销</a></li>
 				</ul>
 			</div>
 			<div class="span9">
@@ -62,7 +62,7 @@
 			</div>
 		</div>
 	</div>
-
+<?php echo $this->element('sql_dump'); ?>
 <!--	<div id="mid">
 		<div class="row">
 			<div class="nav nav-list">

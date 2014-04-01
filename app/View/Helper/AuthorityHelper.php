@@ -7,6 +7,7 @@ class AuthorityHelper extends AppHelper
 	public $pitch_pages_nnlogin;
 	public $pitch_authority;
 	public $userAuthority;
+	public $view;
 
 	public function __construct(View $view, $settings = array())
 	{
@@ -14,31 +15,35 @@ class AuthorityHelper extends AppHelper
 		$this->pitch_pages_nnlogin = $settings['pitch_pages_nnlogin'];
 		$this->pitch_authority = $settings['pitch_authority'];
 		$this->userAuthority = $settings['userAuthority'];
-		debug($settings);
+		$this->view = $view;
     }
 
 	public function npHTML($controller = null, $action = null, $html = '')
 	{
 		if(!$this->Session->check('userInfo') && !$this->notNeedLogin($controller, $action))
-		{
 			return '';
-		}
-		else
-			$this->userInfo = $this->Session->read('userInfo');
-
 		//check authority
 		$neededAuthority = $this->getCurrentPagesAuthority($controller, $action);
 		if($neededAuthority > 0 && $this->userAuthority > $neededAuthority)
-		{
-			$this->redirect(array('controller' => 'Pages','action' => 'error404'));
-			exit();
-		}
+			return '';
+		return $html;
 	}
 
-	// public function npLink(string $title, mixed $url = null, array $options = array(), string $confirmMessage = false)
-	// {
-
-	// }
+	public function npLink($title, $url = null, $options = array(), $confirmMessage = false,
+							$controller = null, $action = null)
+	{
+		if($controller == null)
+			$controller = $url['controller'];
+		if($action == null)
+			$action = $url['action'];
+		if(!isset($this->userAuthority) && !$this->notNeedLogin($controller, $action))
+			return '';
+		//check authority
+		$neededAuthority = $this->getCurrentPagesAuthority($controller, $action);
+		if($neededAuthority > 0 && $this->userAuthority > $neededAuthority)
+			return '';
+		return $this->view->Html->link($title, $url, $options, $confirmMessage);
+	}
 
 	private function getCurrentPagesAuthority($controller, $action)
 	{

@@ -42,12 +42,16 @@ class AppController extends Controller
 			'login' => -1),
 		'Timetables' => array(
 			'_default' => 13,
-			'checkTimetable' => 7
-			));
+			'checkTimetable' => 7),
+		'Matchs' => array(
+			'_default' => 13,
+			'register' => 7,
+			'del' => 7)
+		);
 
 	protected $userInfo;
 	public function beforeFilter()
-	{debug('appC');
+	{
 		//check login
 		if(!$this->Session->check('userInfo') && !$this->notNeedLogin())
 		{
@@ -68,13 +72,16 @@ class AppController extends Controller
 
 	public function afterFilter()
 	{
-		if(in_array('Authority', $this->helpers))
-		{
-			$this->set('pitch_pages_nnlogin', $pitch_pages_nnlogin);
-			$this->set('pitch_authority', $pitch_authority);
-			$this->set('userAuthority', $this->userInfo['User']['authority']);
-		}
-			
+		$url = $this->Session->read('lastPos');
+		if($url == null || $url != $this->params->url);
+			$this->Session->write('lastPos', $this->params->url);
+	}
+
+	protected function returnLastPos()
+	{
+		$url = $this->Session->read('lastPos');
+		if($url != null);
+			$this->redirect('/'.$url);
 	}
 
 	protected function setErrorInformation($boolean = true,$information = '')
@@ -107,5 +114,20 @@ class AppController extends Controller
 			return $this->pitch_authority[$this->params['controller']]['_default'];
 		else
 			return $this->pitch_authority['_default'];
+	}
+
+
+	protected function getOneUserInfoByNum($num = 0)
+	{
+		App::import('Vendor','AuthBBT');
+		$authBBT = new AuthBBT();
+		return $authBBT->getOneUser(array('User.num' => $num));
+	}
+
+	protected function getSomeUserInfoByNum($num = array())
+	{
+		App::import('Vendor','AuthBBT');
+		$authBBT = new AuthBBT();
+		return $authBBT->getAllUsers(array('User.num' => $num));
 	}
 }

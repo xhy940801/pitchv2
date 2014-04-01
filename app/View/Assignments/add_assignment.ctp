@@ -3,7 +3,7 @@
 <?php
 if(isset($successful))
 	echo $this->App->errorInfo($successful, $errorInformation); ?>
-<script language="javascript" type="text/javascript" src="<?php echo MY_WEB_ROOT.'viewPlugins/My97DatePicker/WdatePicker.js'; ?>"></script>
+<script language="javascript" type="text/javascript" src="<?php echo $this->webroot.'viewPlugins/My97DatePicker/WdatePicker.js'; ?>"></script>
 <form class="form-horizontal" action="" method="post">
 	<div class="control-group">
 		<label class="control-label" for="inputStartLeisure">Start leisure</label>

@@ -12,13 +12,13 @@ class User extends AppModel
 			'className' => 'Group',
 			'foreignKey' => 'group_id')
 		);
-	public $hasMany = array(
-		'Timetable' => array(
-			'className' => 'Timetable',
-			'foreignKey' => 'user_id'),
-		'Match' => array(
-			'className' => 'Match',
-			'foreignKey' => 'user_id'));
+	// public $hasMany = array(
+	// 	'Timetable' => array(
+	// 		'className' => 'Timetable',
+	// 		'foreignKey' => 'user_id'),
+	// 	'Match' => array(
+	// 		'className' => 'Match',
+	// 		'foreignKey' => 'user_id'));
 	public $validate = array(
 		'num' => array(
 			'onlyNumberAndLengthIs12' => array(

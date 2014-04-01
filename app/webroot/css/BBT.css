@@ -8,6 +8,17 @@
 	margin-top: 20px;
 }
 
+.paddingBTElements
+{
+	margin-top: 20px;
+}
+
+.BBTDivider
+{
+	height: 1px;
+	background-color: #ddd;
+}
+
 .table .rightAlign, .table .rightAlign2
 {
 	text-align: right;

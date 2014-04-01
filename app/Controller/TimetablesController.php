@@ -21,10 +21,10 @@ class TimetablesController extends AppController
 				for($j=0;$j<7;++$j)
 				{
 					if($this->request->data[$abcdefg[$j].$i] == '1')
-						$data[$count++] = array("leisure" => $abcdefg[$j].$i,'user_id' => $this->userInfo['User']['id'],'checked' => 0);
+						$data[$count++] = array("leisure" => $abcdefg[$j].$i,'user_num' => $this->userInfo['User']['num'],'checked' => 0);
 				}
 			}
-			if(!$this->Timetable->deleteAll(array('user_id' => $this->userInfo['User']['id'],'checked' => 0)))
+			if(!$this->Timetable->deleteAll(array('user_num' => $this->userInfo['User']['num'],'checked' => 0)))
 			{
 				$suc = 0;
 				$this->set('successful',0);
@@ -39,7 +39,7 @@ class TimetablesController extends AppController
 				$this->set('errorInformation','Save timetable fail!');
 			}
 		}
-		$timetable = $this->Timetable->find('all',array('condition' => array('Timetable.user_id' => $this->userInfo['User']['id']),'recursive' => -1));
+		$timetable = $this->Timetable->find('all',array('conditions' => array('Timetable.user_num' => $this->userInfo['User']['num']),'recursive' => -1));
 		$timetable = $this->departTimetable($timetable);
 		if(empty($timetable[0]))
 			$oldTimetable = $timetable[1];
@@ -50,16 +50,16 @@ class TimetablesController extends AppController
 		$this->set('isEdit',$isEdit);
 	}
 
-	public function checkTimetable($id = null)
+	public function checkTimetable($num = null)
 	{
-		if($id && $this->data->is('post'))
+		if($num && $this->data->is('post'))
 		{
 			$this->loadModel('User');
-			$user = $this->User->find('first',array('condition' => array('id' => $id)));
+			$user = $this->User->find('first',array('conditions' => array('num' => $num)));
 			if($user['User']['authority'] > $this->userInfo['User']['authority'])
 			{
-				$this->Timetable->deleteAll(array('user_id' => $id,'checked' => 1));
-				$this->Timetable->updateAll(array('Timetable.checked' => 1),array('Timetable.user_id' => $id));
+				$this->Timetable->deleteAll(array('user_num' => $num,'checked' => 1));
+				$this->Timetable->updateAll(array('Timetable.checked' => 1),array('Timetable.user_num' => $num));
 				$this->set('successful',1);
 			}
 			else
@@ -70,20 +70,20 @@ class TimetablesController extends AppController
 		}
 	}
 
-	public function showOnesUncheckedTimetable($id = null)
+	public function showOnesUncheckedTimetable($num = null)
 	{
-		if($id)
+		if($num)
 		{
-			$uncheckedTimetable = $this->Timetable->find('all',array('condition' => array('Timetable.user_id' => $id,'checked' => 0),'recursive' => -1));
+			$uncheckedTimetable = $this->Timetable->find('all',array('conditions' => array('Timetable.user_num' => $num,'checked' => 0),'recursive' => -1));
 			$this->set('uncheckedTimetable',$uncheckedTimetable);
 		}
 	}
 
-	public function showOnesCheckedTimetable($id = null)
+	public function showOnesCheckedTimetable($num = null)
 	{
-		if($id)
+		if($num)
 		{
-			$checkedTimetable = $this->Timetable->find('all',array('condition' => array('Timetable.user_id' => $id,'checked' => 1),'recursive' => -1));
+			$checkedTimetable = $this->Timetable->find('all',array('conditions' => array('Timetable.user_num' => $id,'checked' => 1),'recursive' => -1));
 			$this->set('checkedTimetable',$checkedTimetable);
 		}
 	}

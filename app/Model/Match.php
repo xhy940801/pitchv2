@@ -7,10 +7,10 @@ class Match extends AppModel
 	public $belongsTo = array(
 		'Assignment' => array(
 			'className' => 'Assignment',
-			'foreignKey' => 'assignment_id'),
-		'User' => array(
-			'className' => 'User',
-			'foreignKey' => 'user_id'));
+			'foreignKey' => 'assignment_id'));
+		// 'User' => array(
+		// 	'className' => 'User',
+		// 	'foreignKey' => 'user_id'));
 	public $validate = array(
 		'assignment_id' => array(
 			'onlyNumber' => array(

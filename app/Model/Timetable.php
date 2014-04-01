@@ -4,10 +4,10 @@ App::uses('AppModel', 'Model');
 
 class Timetable extends AppModel
 {
-	public $belongsTo = array(
-		'User' => array(
-			'className' => 'User',
-			'foreignKey' => 'user_id'));
+	// public $belongsTo = array(
+	// 	'User' => array(
+	// 		'className' => 'User',
+	// 		'foreignKey' => 'user_id'));
 	public $validate = array(
 		'leisure' => array(
 			'onlyNumberAndLengthIs12' => array(

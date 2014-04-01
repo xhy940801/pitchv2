@@ -76,6 +76,6 @@
 		<div id="content">
 			< ?php echo $this->fetch('content'); ?>
 		</div>
-	</div> -->
+	</div> --><?php echo $this->element('sql_dump'); ?>
 </body>
 </html>

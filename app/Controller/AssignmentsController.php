@@ -21,7 +21,6 @@ class AssignmentsController extends AppController
 				$data['Assignment']['start_leisure'] = $data['Assignment']['start_leisure_d'].$data['Assignment']['start_leisure_c'];
 				$data['Assignment']['end_leisure'] = $data['Assignment']['end_leisure_d'].$data['Assignment']['end_leisure_c'];
 				$this->Assignment->create();
-				debug($data);
 				$this->setErrorInformation($this->Assignment->save($data),'Saving data error!');
 				$this->set('projectId', $id);
 			}
@@ -32,9 +31,10 @@ class AssignmentsController extends AppController
 	{
 		if($id)
 		{
+			App::import('Vendor','AuthBBT');
 			$assignments = $this->Assignment->find('all',
-				array('condition' => array('Assignment.project_id' => $id), 'recursive' => 1));
-			$this->loadModel('User');
+				array('conditions' => array('Assignment.project_id' => $id), 'recursive' => 1));
+			$authBBT = new AuthBBT();
 			for($i=0;$i<count($assignments);++$i)
 			{
 				$assignments[$i]['MatchSigned'] = array();
@@ -43,29 +43,30 @@ class AssignmentsController extends AppController
 				{
 					$s = 0;
 					$us = 0;
-					$user = $this->User->find('first',
-											array(	'condition' => array('User.id' => $assignments[$i]['Match']['user_id']),
-													'recursive' => -1));
-					if($assignments[$i]['Match'][$j]['signed'] == 0)
+					$user = $authBBT->getOneUser(array('User.num' => $assignments[$i]['Match'][$j]['user_num']));
+					if(isset($user['returnData']) && $user['error'] == '0')
 					{
-						$assignments[$i]['MatchUnsigned'][$us] = $assignments[$i]['Match'][$j];
-						$assignments[$i]['MatchUnsigned'][$us++]['User'] = $user['User'];
-					}
-					else if($assignments[$i]['Match'][$j]['signed'] == 1)
-					{
-						$assignments[$i]['MatchSigned'][$s] = $assignments[$i]['Match'][$j];
-						$assignments[$i]['MatchSigned'][$s++]['User'] = $user['User'];
+						$user = $user['returnData'];
+						unset($user['Group']);
+						if($assignments[$i]['Match'][$j]['signed'] == 0)
+						{
+							$assignments[$i]['MatchUnsigned'][$us] = $assignments[$i]['Match'][$j];
+							$assignments[$i]['MatchUnsigned'][$us++]['User'] = $user;
+						}
+						else if($assignments[$i]['Match'][$j]['signed'] == 1)
+						{
+							$assignments[$i]['MatchSigned'][$s] = $assignments[$i]['Match'][$j];
+							$assignments[$i]['MatchSigned'][$s++]['User'] = $user;
+						}
 					}
 				}
 				unset($assignments[$i]['Match']);
 			}
 
 			$this->loadModel('Department');
-			$departments = $this->Department->find('all',array('recursive' => -1));
 			
 			$this->set('assignments', $assignments);
 			$this->set('projectId', $id);
-			$this->set('departments', $department);
 		}
 	}
 
@@ -89,17 +90,17 @@ class AssignmentsController extends AppController
 			$leisures = $this->getLeisureList($this->request->data['start_leisure'],$this->request->data['end_leisure']);
 			if(count($leisures) > 0)
 			{
-				$query = 'SELECT `num` FROM `'.$usersTableName.'` WHERE `id` IN ( ';
-				$query .= 'SELECT `'.$this->Timetable->tablePrefix.'no_lasting_table0`.`user_id` FROM ';
+				$query = 'SELECT `num` FROM `'.$usersTableName.'` WHERE `num` IN ( ';
+				$query .= 'SELECT `'.$this->Timetable->tablePrefix.'no_lasting_table0`.`user_num` FROM ';
 				for($i=0;$i<count($leisures);++$i)
 				{
-					$query .= '(SELECT  `user_id` ,  `leisure` , `checked` FROM  `'.$timeTablesTableName.'` WHERE  `leisure` = \''.$leisures[$i].'\' AND `checked` = \'1\') AS '.$this->Timetable->tablePrefix.'no_lasting_table'.strval($i).', ';
+					$query .= '(SELECT  `user_num` ,  `leisure` , `checked` FROM  `'.$timeTablesTableName.'` WHERE  `leisure` = \''.$leisures[$i].'\' AND `checked` = \'1\') AS '.$this->Timetable->tablePrefix.'no_lasting_table'.strval($i).', ';
 				}
 				$query = substr($query, 0,strlen($query) - 2);
 				$query .= ' WHERE 1 AND ';
 				for($i=1;$i<count($leisures);++$i)
 				{
-					$query .= $this->Timetable->tablePrefix.'no_lasting_table'.strval($i-1).'.user_id'.' = '.$this->Timetable->tablePrefix.'no_lasting_table'.strval($i).'.user_id'.' AND ';
+					$query .= $this->Timetable->tablePrefix.'no_lasting_table'.strval($i-1).'.user_num'.' = '.$this->Timetable->tablePrefix.'no_lasting_table'.strval($i).'.user_num'.' AND ';
 				}
 				$query = substr($query, 0,strlen($query) - 5);
 				$query .= ') ORDER BY `pitch_times` DESC LIMIT '.strval($this->request->data['the_number_needed']);

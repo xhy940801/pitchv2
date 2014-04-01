@@ -15,7 +15,8 @@ class UsersController extends AppController
 			debug($user=$authBBT->checkUser($this->request->data['username'],$this->request->data['psd']));
 			if(isset($user['returnData']['User']))
 			{
-				$isExist = $this->User->find('first',array('condition' => array('User.num' => $user['returnData']['User']['num']),'recursive' => -1));
+				debug($user['returnData']['User']['num']);
+				$isExist = $this->User->find('first',array('conditions' => array('User.num' => $user['returnData']['User']['num']),'recursive' => -1));
 				$data = array(
 						'User' => array(
 							'num' => $user['returnData']['User']['num'],
@@ -41,9 +42,10 @@ class UsersController extends AppController
 				}
 				else
 				{
+					debug($isExist);
 					$this->User->id = $isExist['User']['id'];
-					if(!$this->User->save($data))
-						cakelog::write(LOG_ERR,'Update data fail');
+					 if(!$this->User->save($data))
+					 	cakelog::write(LOG_ERR,'Update data fail');
 					$data['User']['id'] = $isExist['User']['id'];
 					$data['User']['authority'] = $isExist['User']['authority'];
 					$this->setUserSession($data);
@@ -128,7 +130,7 @@ class UsersController extends AppController
 	{
 		if($uNum = null)
 			exit();
-		$user = $this->User->find('first',array('condition' => array('User.num' => $uNum),'recursive' => -1));
+		$user = $this->User->find('first',array('conditions' => array('User.num' => $uNum),'recursive' => -1));
 		$result = $this->getOne($uNum,$user['User']['id']);
 		if($result['error'] == '')
 		{
@@ -155,7 +157,7 @@ class UsersController extends AppController
 		debug($this->userInfo);
 		App::import('Vendor','AuthBBT');
 		$authBBT = new AuthBBT();
-		$info = $authBBT->getOneUser($uNum);
+		$info = $authBBT->getOneUser(array('User.num' => $uNum));
 		if(empty($info['returnData']))
 		{
 			cakelog::write(LOG_ERR,'Unknow error');
@@ -165,13 +167,13 @@ class UsersController extends AppController
 		else
 		{
 			$info = $info['returnData'];
-			$otherInfo = $this->User->find('first',array('condition' => array('User.num' => $uNum),'recursive' => -1));
+			$otherInfo = $this->User->find('first',array('conditions' => array('User.num' => $uNum),'recursive' => -1));
 			$info['Other'] = array(
 				'last_login_date' => $otherInfo['User']['modified'],
 				'login_times' => $otherInfo['User']['login_times'],
 				'pitch_times' => $otherInfo['User']['pitch_times']);
 			$this->loadModel('Timetable');
-			$timetable = $this->Timetable->find('all',array('condition' => array('Timetable.user_id' => $uId),'recursive' => -1));
+			$timetable = $this->Timetable->find('all',array('conditions' => array('Timetable.user_num' => $uNum),'recursive' => -1));
 			$timetable = $this->departTimetable($timetable);
 			$result['timetable'] = $timetable;
 			$result['info'] = $info;

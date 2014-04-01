@@ -3699,3 +3699,69 @@ Stack Trace:
 #3 /var/www/pitchv2/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2014-04-01 14:58:58 Error: Fatal Error (1): Class 'AuthBBT' not found in [/var/www/pitchv2/app/Controller/AssignmentsController.php, line 46]
+2014-04-01 14:58:58 Error: [FatalErrorException] Class 'AuthBBT' not found
+Request URL: /pitchv2/Assignments/showAssignments/7
+Stack Trace:
+#0 /var/www/pitchv2/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Class 'AuthBBT'...', '/var/www/pitchv...', 46)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'AuthBBT'...', '/var/www/pitchv...', 46, Array)
+#2 /var/www/pitchv2/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'AuthBBT'...', '/var/www/pitchv...', 46, Array)
+#3 /var/www/pitchv2/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-01 15:07:14 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '201230620437' for key 'num'
+Request URL: /pitchv2/Users/login
+Stack Trace:
+#0 /var/www/pitchv2/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/pitchv2/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('UPDATE `pitchv2...', Array)
+#2 /var/www/pitchv2/lib/Cake/Model/Datasource/Database/Mysql.php(382): DboSource->execute('UPDATE `pitchv2...')
+#3 /var/www/pitchv2/lib/Cake/Model/Model.php(1733): Mysql->update(Object(User), Array, Array)
+#4 /var/www/pitchv2/app/Controller/UsersController.php(45): Model->save(Array)
+#5 [internal function]: UsersController->login()
+#6 /var/www/pitchv2/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /var/www/pitchv2/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/pitchv2/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/pitchv2/app/webroot/index.php(113): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-04-01 15:07:35 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '201230620437' for key 'num'
+Request URL: /pitchv2/Users/login
+Stack Trace:
+#0 /var/www/pitchv2/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/pitchv2/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('UPDATE `pitchv2...', Array)
+#2 /var/www/pitchv2/lib/Cake/Model/Datasource/Database/Mysql.php(382): DboSource->execute('UPDATE `pitchv2...')
+#3 /var/www/pitchv2/lib/Cake/Model/Model.php(1733): Mysql->update(Object(User), Array, Array)
+#4 /var/www/pitchv2/app/Controller/UsersController.php(45): Model->save(Array)
+#5 [internal function]: UsersController->login()
+#6 /var/www/pitchv2/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /var/www/pitchv2/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/pitchv2/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/pitchv2/app/webroot/index.php(113): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-04-01 15:19:13 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '201230620437' for key 'num'
+Request URL: /pitchv2/Users/login
+Stack Trace:
+#0 /var/www/pitchv2/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/pitchv2/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('UPDATE `pitchv2...', Array)
+#2 /var/www/pitchv2/lib/Cake/Model/Datasource/Database/Mysql.php(382): DboSource->execute('UPDATE `pitchv2...')
+#3 /var/www/pitchv2/lib/Cake/Model/Model.php(1733): Mysql->update(Object(User), Array, Array)
+#4 /var/www/pitchv2/app/Controller/UsersController.php(46): Model->save(Array)
+#5 [internal function]: UsersController->login()
+#6 /var/www/pitchv2/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /var/www/pitchv2/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/pitchv2/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/pitchv2/app/webroot/index.php(113): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-04-01 15:22:31 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '201230620437' for key 'num'
+Request URL: /pitchv2/Users/login
+Stack Trace:
+#0 /var/www/pitchv2/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/pitchv2/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('UPDATE `pitchv2...', Array)
+#2 /var/www/pitchv2/lib/Cake/Model/Datasource/Database/Mysql.php(382): DboSource->execute('UPDATE `pitchv2...')
+#3 /var/www/pitchv2/lib/Cake/Model/Model.php(1733): Mysql->update(Object(User), Array, Array)
+#4 /var/www/pitchv2/app/Controller/UsersController.php(47): Model->save(Array)
+#5 [internal function]: UsersController->login()
+#6 /var/www/pitchv2/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /var/www/pitchv2/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/pitchv2/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/pitchv2/app/webroot/index.php(113): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}

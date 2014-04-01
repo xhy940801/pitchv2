@@ -32,9 +32,40 @@ class AssignmentsController extends AppController
 	{
 		if($id)
 		{
-			$assignments = $this->Assignment->find('all', array('condition' => array('Assignment.project_id' => $id)));
+			$assignments = $this->Assignment->find('all',
+				array('condition' => array('Assignment.project_id' => $id), 'recursive' => 1));
+			$this->loadModel('User');
+			for($i=0;$i<count($assignments);++$i)
+			{
+				$assignments[$i]['MatchSigned'] = array();
+				$assignments[$i]['MatchUnsigned'] = array();
+				for($j=0;$j<count($assignments[$i]['Match']);++$j)
+				{
+					$s = 0;
+					$us = 0;
+					$user = $this->User->find('first',
+											array(	'condition' => array('User.id' => $assignments[$i]['Match']['user_id']),
+													'recursive' => -1));
+					if($assignments[$i]['Match'][$j]['signed'] == 0)
+					{
+						$assignments[$i]['MatchUnsigned'][$us] = $assignments[$i]['Match'][$j];
+						$assignments[$i]['MatchUnsigned'][$us++]['User'] = $user['User'];
+					}
+					else if($assignments[$i]['Match'][$j]['signed'] == 1)
+					{
+						$assignments[$i]['MatchSigned'][$s] = $assignments[$i]['Match'][$j];
+						$assignments[$i]['MatchSigned'][$s++]['User'] = $user['User'];
+					}
+				}
+				unset($assignments[$i]['Match']);
+			}
+
+			$this->loadModel('Department');
+			$departments = $this->Department->find('all',array('recursive' => -1));
+			
 			$this->set('assignments', $assignments);
 			$this->set('projectId', $id);
+			$this->set('departments', $department);
 		}
 	}
 

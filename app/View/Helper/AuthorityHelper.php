@@ -4,34 +4,58 @@ App::uses('AppHelper', 'View/Helper');
 
 class AuthorityHelper extends AppHelper
 {
-	private $week = array('a' => '周一', 'b' => '周二', 'c' => '周三', 'd' => '周四', 'e' => '周五', 'f' => '周六', 'g' => '周日');
-	private $day = array('0' => '一二节', '1' => '三四节', '2' => '五六节', '3' => '七节', '4' => '八节', '5' => '晚上');
+	public $pitch_pages_nnlogin;
+	public $pitch_authority;
+	public $userAuthority;
 
-	public function decodeLeisureToZH($code)
+	public function __construct(View $view, $settings = array())
 	{
-		$strArr = str_split($code);
-		$leisure;
-		if(count($strArr) != 2)
-			return false;
-		if(isset($this->week[$strArr[0]]))
-			$leisure['week'] = $this->week[$strArr[0]];
+		parent::__construct($view, $settings);
+		$this->pitch_pages_nnlogin = $settings['pitch_pages_nnlogin'];
+		$this->pitch_authority = $settings['pitch_authority'];
+		$this->userAuthority = $settings['userAuthority'];
+		debug($settings);
+    }
+
+	public function npHTML($controller = null, $action = null, $html = '')
+	{
+		if(!$this->Session->check('userInfo') && !$this->notNeedLogin($controller, $action))
+		{
+			return '';
+		}
 		else
-			return false;
-		if(isset($this->day[$strArr[1]]))
-			$leisure['day'] = $this->day[$strArr[1]];
-		else
-			return false;
-		return $leisure;
+			$this->userInfo = $this->Session->read('userInfo');
+
+		//check authority
+		$neededAuthority = $this->getCurrentPagesAuthority($controller, $action);
+		if($neededAuthority > 0 && $this->userAuthority > $neededAuthority)
+		{
+			$this->redirect(array('controller' => 'Pages','action' => 'error404'));
+			exit();
+		}
 	}
 
-	public function getStartEndTime($start, $end)
-	{
-		$strStart = $this->decodeLeisureToZH($start);
-		$strEnd = $this->decodeLeisureToZH($end);
+	// public function npLink(string $title, mixed $url = null, array $options = array(), string $confirmMessage = false)
+	// {
 
-		if($strStart == false || $strEnd == false)
-			return false;
-		return '从 '.$strStart['week'].$strStart['day'].' 开始 到 '.$strEnd['week'].$strEnd['day'].' 结束';
+	// }
+
+	private function getCurrentPagesAuthority($controller, $action)
+	{
+		if(isset($this->pitch_authority[$controller][$action]))
+			return $this->pitch_authority[$controller][$action];
+		else if(isset($this->pitch_authority[$controller]))
+			return $this->pitch_authority[$controller]['_default'];
+		else
+			return $this->pitch_authority['_default'];
+	}
+
+	private function notNeedLogin($controller, $action)
+	{
+		if(isset($this->pitch_pages_nnlogin[$controller][$action])
+			&& $this->pitch_pages_nnlogin[$controller][$action] == 1)
+			return true;
+		return false;
 	}
 }
 

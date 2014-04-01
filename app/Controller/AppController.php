@@ -33,8 +33,8 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller
 {
-	private $pitch_pages_nnlogin = array('Users' => array('login' => 1));
-	private $pitch_authority = array('_default' => 13,
+	protected $pitch_pages_nnlogin = array('Users' => array('login' => 1));
+	protected $pitch_authority = array('_default' => 13,
 		'Pages' => array(
 			'_default' => -1),
 		'Users' => array(
@@ -47,7 +47,7 @@ class AppController extends Controller
 
 	protected $userInfo;
 	public function beforeFilter()
-	{
+	{debug('appC');
 		//check login
 		if(!$this->Session->check('userInfo') && !$this->notNeedLogin())
 		{
@@ -64,7 +64,17 @@ class AppController extends Controller
 			$this->redirect(array('controller' => 'Pages','action' => 'error404'));
 			exit();
 		}
+	}
 
+	public function afterFilter()
+	{
+		if(in_array('Authority', $this->helpers))
+		{
+			$this->set('pitch_pages_nnlogin', $pitch_pages_nnlogin);
+			$this->set('pitch_authority', $pitch_authority);
+			$this->set('userAuthority', $this->userInfo['User']['authority']);
+		}
+			
 	}
 
 	protected function setErrorInformation($boolean = true,$information = '')

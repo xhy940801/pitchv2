@@ -9,7 +9,24 @@ class AssignmentsController extends AppController
 		'minus' => array('a' => 0,'b' => 1,'c' => 2,'d' => 3,'e' => 4,'f' => 5,'g' => 6));
 
 	public $layout = "project";
-	public $helpers = array('Js', 'Html', 'Form', 'Time', 'Leisure', 'App');
+	// public $helpers = array(
+	// 	'Js', 'Html', 'Form', 'Time', 'Leisure', 'App',
+	// 	'Authority' => array(
+	// 		'pitch_pages_nnlogin' => $this->pitch_pages_nnlogin,
+	// 		'pitch_authority' => $this->pitch_authority,
+	// 		'userAuthority' => $this->userInfo['User']['authority']));
+	public function beforeFilter()
+	{
+		parent::beforeFilter();
+		debug('assC');
+		$this->helpers = array(
+		'Js', 'Html', 'Form', 'Time', 'Leisure', 'App',
+		'Authority' => array(
+			'pitch_pages_nnlogin' => $this->pitch_pages_nnlogin,
+			'pitch_authority' => $this->pitch_authority,
+			'userAuthority' => $this->userInfo['User']['authority']));
+	}
+
 	public function addAssignment($id = null)
 	{
 		if($id)

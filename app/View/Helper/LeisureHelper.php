@@ -7,6 +7,11 @@ class LeisureHelper extends AppHelper
 	private $week = array('a' => '周一', 'b' => '周二', 'c' => '周三', 'd' => '周四', 'e' => '周五', 'f' => '周六', 'g' => '周日');
 	private $day = array('0' => '一二节', '1' => '三四节', '2' => '五六节', '3' => '七节', '4' => '八节', '5' => '晚上');
 
+	public function __construct(View $view, $settings = array())
+	{
+		parent::__construct($view, $settings);
+    }
+
 	public function decodeLeisureToZH($code)
 	{
 		$strArr = str_split($code);

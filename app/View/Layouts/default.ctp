@@ -42,7 +42,10 @@
 			$('div.bs-docs-sidebar li:has(a[href^="' + urlStr + '/' + urlArr[numCount + 1] + '"])').addClass("active");
 		}
 	});
-	</script>
+</script>
+<script type = "text/javascript" >
+	var webroot = <?=$this->webroot?>;
+</script>
 </head>
 <body>
 	

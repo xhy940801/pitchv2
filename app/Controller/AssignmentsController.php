@@ -94,28 +94,45 @@ class AssignmentsController extends AppController
 		}
 	}
 
-	public function recommend($id = null)
+	public function recommend($id = null, $group = '')
 	{
-		$this->layout = 'blank';
+		$this->layout = 'ajax';
+		$userInfoList = array();
 		if($id != null)
 		{
 			$assignment = $this->Assignment->find('first', array('conditions' => array('Assignment.id' => $id), 'recursive' => 1));
-			debug($assignment);
 			$the_number_needed = $assignment['Assignment']['the_number_needed'] - count($assignment['Match']);
 			$users = $this->recommendUser($assignment['Assignment']['start_leisure'], $assignment['Assignment']['end_leisure'], $the_number_needed);
 			$userList = array();
 			for($i=0;$i<count($users);++$i)
 			{
-				$userList[$i] = $users[$i]['pitchv2_users']['num'];
+				$userList[$i] = $users[$i]['User']['num'];
 			}
 			$userList[$i] = '201230620437';
 			$userInfoList = $this->getSomeUserInfoByNum($userList);
-			debug($userList);
-			debug($userInfoList);
+			if(isset($userInfoList['returnData']))
+				$userInfoList = $userInfoList['returnData'];
+			for($i=0;$i<count($userInfoList);++$i)
+			{
+				if(isset($usersPitchInfo[$i]['User']['pitch_times']))
+					$userInfoList[$i]['User']['pitch_times'] = $users[$i]['User']['pitch_times'];
+				else
+					$userInfoList[$i]['User']['pitch_times'] = 0;
+			}
+		}
+		$this->set('users', $userInfoList);
+	}
+
+	private function decodeGroup($group)
+	{
+		$group = json_decode($group);
+		for($i=0;$i<count($group);++$i)
+		{
+			$group[$i] = intval($group[$i]);
 		}
 	}
 
-	private function recommendUser($start_leisure, $end_leisure, $the_number_needed)
+	private function recommendUser($start_leisure, $end_leisure, $the_number_needed, $groupId = array('1'))
 	{
 		$this->loadModel('Timetable');
 		$this->loadModel('User');
@@ -124,7 +141,7 @@ class AssignmentsController extends AppController
 		$leisures = $this->getLeisureList($start_leisure, $end_leisure);
 		if(count($leisures) > 0)
 		{
-			$query = 'SELECT `num` FROM `'.$usersTableName.'` WHERE `num` IN ( ';
+			$query = 'SELECT `num` , `pitch_times` FROM `'.$usersTableName.'` AS `User` WHERE `num` IN ( ';
 			$query .= 'SELECT `'.$this->Timetable->tablePrefix.'no_lasting_table0`.`user_num` FROM ';
 			for($i=0;$i<count($leisures);++$i)
 			{
@@ -137,10 +154,20 @@ class AssignmentsController extends AppController
 				$query .= $this->Timetable->tablePrefix.'no_lasting_table'.strval($i-1).'.user_num'.' = '.$this->Timetable->tablePrefix.'no_lasting_table'.strval($i).'.user_num'.' AND ';
 			}
 			$query = substr($query, 0,strlen($query) - 5);
-			$query .= ') ORDER BY `pitch_times` DESC LIMIT '.strval($the_number_needed);
-			debug($query);
+			$groupCondition = '';
+			if(is_array($groupId))
+			{
+				$groupCondition = '`group_id` IN ( ';
+				foreach ($groupId as $gid)
+				{
+					$groupCondition .= '\''.$gid.'\'';
+				}
+				$groupCondition .= ' ) ';
+			}
+			else
+				$groupCondition = '1';
+			$query .= ') AND '.$groupCondition.' ORDER BY `pitch_times` DESC LIMIT '.strval($the_number_needed);
 			$row = $this->Timetable->query($query);
-			debug($row);
 			return $row;
 		}
 		return array();

@@ -4383,3 +4383,14 @@ Stack Trace:
 #11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
 #12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #13 {main}
+2014-04-12 00:30:26 Error: [MissingActionException] Action MatchesController::add() could not be found.
+Exception Attributes: array (
+  'controller' => 'MatchesController',
+  'action' => 'add',
+)
+Request URL: /pitchv2/Matches/add/%5B%22201010101010%22%2C%22201230620437%22%5D
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#2 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

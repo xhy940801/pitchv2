@@ -28,7 +28,7 @@
 	?>
 	<tr>
 		<th>总计人数：</th>
-		<th><?=count($users)?></th>
+		<th  colspan="6"><?=count($users)?></th>
 		<th>
 			<?=$this->Authority->npLink('添加全部',
 											array('controller' => 'Matches', 'action' => 'add', json_encode($usersNum)),

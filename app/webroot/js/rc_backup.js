@@ -13,12 +13,18 @@ $(document).ready(
 		$(".recommendUserButton").click(
 			function()
 			{
-				$(this).addClass("disabled");
 				var json = $("#loadingImg").attr("group-json");
 				var href = $(this).attr("href") + "/" + json;
 				var imgPath = webroot + "img/loading.gif";
+				var curHeight = $("#recommendUser").height();
 				$("#loadingImg").html("<img src=\"" + imgPath + "\"  alt=\"Loading\" />");
+				var oldHtml = $("#recommendBody").html();
 				$("#recommendBody").html("");
+				$("#recommendUser").css("height", "auto");
+				var newHeight = $("#recommendUser").height();
+				$("#recommendBody").html(oldHtml);
+				$("#recommendUser").height(curHeight).animate({ height: newHeight }, "8000").children("#recommendBody").html("");
+				curHeight = $("#recommendUser").height();
 				$.getJSON(href, 
 					function(response, statusTXT)
 					{
@@ -37,12 +43,10 @@ $(document).ready(
 						tableBody += "<tr><th>总计人数：</th><th colspan=\"6\">" + response["user_count"] + 
 							"</th><th>" + response["all_users"] + "</th></tr>";
 						$("#recommendBody").html(tableBody);
-					})
-				$(document).ajaxStop(
-					function()
-					{
+						$("#recommendBody").css("height", "auto");
+						var reHeight = $("#recommendUser").height();
+						$("#recommendBody").height(curHeight).animate({ height: reHeight }, "1000");
 						$("#loadingImg").html("");
-						$(".recommendUserButton").removeClass("disabled");
 					});
 				return false;
 			});

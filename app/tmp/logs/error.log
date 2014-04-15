@@ -4394,3 +4394,1219 @@ Stack Trace:
 #1 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
 #2 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2014-04-13 10:14:26 Error: Fatal Error (4): syntax error, unexpected '}' in [E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php, line 53]
+2014-04-13 10:14:26 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /pitchv2/Assignments/showAssignments/7
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 53)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 53, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\WAMP\www\pit...', 53, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-13 10:20:41 Error: [MissingActionException] Action MatchesController::add() could not be found.
+Exception Attributes: array (
+  'controller' => 'MatchesController',
+  'action' => 'add',
+)
+Request URL: /pitchv2/Matches/add/%5B%22201230620437%22%5D
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#2 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-13 10:42:17 Error: Fatal Error (64): Call-time pass-by-reference has been removed in [E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php, line 68]
+2014-04-13 10:42:17 Error: [FatalErrorException] Call-time pass-by-reference has been removed
+Request URL: /pitchv2/Assignments/showAssignments/7
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(64, 'Call-time pass-...', 'E:\WAMP\www\pit...', 68)
+#1 [internal function]: ErrorHandler::handleError(64, 'Call-time pass-...', 'E:\WAMP\www\pit...', 68, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 64, 'Call-time pass-...', 'E:\WAMP\www\pit...', 68, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-13 10:44:25 Error: Fatal Error (1): Class 'AuthBBT' not found in [E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php, line 52]
+2014-04-13 10:44:25 Error: [FatalErrorException] Class 'AuthBBT' not found
+Request URL: /pitchv2/Assignments/showAssignmentDetail/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Class 'AuthBBT'...', 'E:\WAMP\www\pit...', 52)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'AuthBBT'...', 'E:\WAMP\www\pit...', 52, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'AuthBBT'...', 'E:\WAMP\www\pit...', 52, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-13 10:47:37 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'group_id' in 'where clause'
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(161): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(96): AssignmentsController->recommendUser('b1', 'b1', 3)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-13 10:47:44 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'group_id' in 'where clause'
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(161): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(96): AssignmentsController->recommendUser('b1', 'b1', 3)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-13 10:47:51 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'group_id' in 'where clause'
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(161): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(96): AssignmentsController->recommendUser('b1', 'b1', 3)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-13 10:48:05 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'group_id' in 'where clause'
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(161): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(96): AssignmentsController->recommendUser('b1', 'b1', 3)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-13 10:49:45 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'group_id' in 'where clause'
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(161): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(96): AssignmentsController->recommendUser('b1', 'b1', 3)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-13 10:50:45 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'group_id' in 'where clause'
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(161): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(96): AssignmentsController->recommendUser('b1', 'b1', 3)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-13 10:56:57 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user_num' in 'field list'
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(161): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(96): AssignmentsController->recommendUser(NULL, NULL, 0)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-13 10:57:33 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user_num' in 'field list'
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(161): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(96): AssignmentsController->recommendUser(NULL, NULL, 0)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-13 11:05:33 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user_num' in 'field list'
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(162): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(97): AssignmentsController->recommendUser(NULL, NULL, 0)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-13 11:06:21 Error: [MissingActionException] Action AssignmentsController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'AssignmentsController',
+  'action' => 'index',
+)
+Request URL: /pitchv2/Assignments/
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#2 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-13 11:06:24 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Timetable.user_num' in 'where clause'
+Request URL: /pitchv2/Users/showUserInformation
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `Timetab...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Timetab...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(1077): DboSource->fetchAll('SELECT `Timetab...', false)
+#4 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(2696): DboSource->read(Object(Timetable), Array)
+#5 E:\WAMP\www\pitchv2\app\Controller\UsersController.php(174): Model->find('all', Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\UsersController.php(64): UsersController->getOne('201010101010', '477')
+#7 [internal function]: UsersController->showUserInformation()
+#8 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#11 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-04-13 11:06:26 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Project.created' in 'order clause'
+Request URL: /pitchv2/Projects/showAllProjects
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `Project...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Project...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(1077): DboSource->fetchAll('SELECT `Project...', false)
+#4 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(2696): DboSource->read(Object(Project), Array)
+#5 E:\WAMP\www\pitchv2\app\Controller\ProjectsController.php(30): Model->find('all', Array)
+#6 [internal function]: ProjectsController->showAllProjects()
+#7 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#8 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#10 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2014-04-13 11:06:32 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Project.created' in 'order clause'
+Request URL: /pitchv2/Projects/showAllProjects
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `Project...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Project...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(1077): DboSource->fetchAll('SELECT `Project...', false)
+#4 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(2696): DboSource->read(Object(Project), Array)
+#5 E:\WAMP\www\pitchv2\app\Controller\ProjectsController.php(30): Model->find('all', Array)
+#6 [internal function]: ProjectsController->showAllProjects()
+#7 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#8 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#10 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2014-04-13 11:12:14 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user_num' in 'field list'
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(162): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(97): AssignmentsController->recommendUser('a1', 'a2', 3)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-13 11:12:36 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user_num' in 'field list'
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(162): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(97): AssignmentsController->recommendUser('a1', 'a2', 3)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-13 11:21:27 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php, line 77]
+2014-04-13 11:21:27 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /pitchv2/Assignments/showAssignments/7
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 77)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 77, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\WAMP\www\pit...', 77, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-14 00:57:35 Error: Fatal Error (4): syntax error, unexpected 'as' (T_AS), expecting ';' in [E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php, line 97]
+2014-04-14 00:57:35 Error: [FatalErrorException] syntax error, unexpected 'as' (T_AS), expecting ';'
+Request URL: /pitchv2/Assignments/recommend/1/[%221%22,%225%22,%226%22]
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 97)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 97, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\WAMP\www\pit...', 97, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-14 01:25:26 Error: Fatal Error (1): Cannot use string offset as an array in [E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php, line 118]
+2014-04-14 01:25:26 Error: [FatalErrorException] Cannot use string offset as an array
+Request URL: /pitchv2/Assignments/recommend/1/[%221%22,%226%22]
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Cannot use stri...', 'E:\WAMP\www\pit...', 118)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use stri...', 'E:\WAMP\www\pit...', 118, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot use stri...', 'E:\WAMP\www\pit...', 118, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-14 01:26:42 Error: Fatal Error (1): Cannot use string offset as an array in [E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php, line 119]
+2014-04-14 01:26:42 Error: [FatalErrorException] Cannot use string offset as an array
+Request URL: /pitchv2/Assignments/recommend/1/[%226%22]
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Cannot use stri...', 'E:\WAMP\www\pit...', 119)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use stri...', 'E:\WAMP\www\pit...', 119, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot use stri...', 'E:\WAMP\www\pit...', 119, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-14 01:26:46 Error: Fatal Error (1): Cannot use string offset as an array in [E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php, line 119]
+2014-04-14 01:26:46 Error: [FatalErrorException] Cannot use string offset as an array
+Request URL: /pitchv2/Assignments/recommend/1/[%226%22]
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Cannot use stri...', 'E:\WAMP\www\pit...', 119)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use stri...', 'E:\WAMP\www\pit...', 119, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot use stri...', 'E:\WAMP\www\pit...', 119, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-14 01:27:10 Error: Fatal Error (1): Cannot use string offset as an array in [E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php, line 119]
+2014-04-14 01:27:10 Error: [FatalErrorException] Cannot use string offset as an array
+Request URL: /pitchv2/Assignments/recommend/1/[%226%22]
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Cannot use stri...', 'E:\WAMP\www\pit...', 119)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use stri...', 'E:\WAMP\www\pit...', 119, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot use stri...', 'E:\WAMP\www\pit...', 119, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-14 01:27:33 Error: Fatal Error (1): Cannot use string offset as an array in [E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php, line 119]
+2014-04-14 01:27:33 Error: [FatalErrorException] Cannot use string offset as an array
+Request URL: /pitchv2/Assignments/recommend/1/[%226%22]
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Cannot use stri...', 'E:\WAMP\www\pit...', 119)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use stri...', 'E:\WAMP\www\pit...', 119, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot use stri...', 'E:\WAMP\www\pit...', 119, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-14 01:27:46 Error: Fatal Error (1): Cannot use string offset as an array in [E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php, line 119]
+2014-04-14 01:27:46 Error: [FatalErrorException] Cannot use string offset as an array
+Request URL: /pitchv2/Assignments/recommend/1/[%226%22]
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Cannot use stri...', 'E:\WAMP\www\pit...', 119)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use stri...', 'E:\WAMP\www\pit...', 119, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot use stri...', 'E:\WAMP\www\pit...', 119, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-14 01:27:54 Error: Fatal Error (1): Cannot use string offset as an array in [E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php, line 119]
+2014-04-14 01:27:54 Error: [FatalErrorException] Cannot use string offset as an array
+Request URL: /pitchv2/Assignments/recommend/1/[%226%22]
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Cannot use stri...', 'E:\WAMP\www\pit...', 119)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use stri...', 'E:\WAMP\www\pit...', 119, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot use stri...', 'E:\WAMP\www\pit...', 119, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-14 01:39:51 Error: [MissingActionException] Action MatchesController::add() could not be found.
+Exception Attributes: array (
+  'controller' => 'MatchesController',
+  'action' => 'add',
+)
+Request URL: /pitchv2/Matches/add/%5B%22201010101010%22%5D
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#2 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-14 01:49:45 Error: Fatal Error (4): syntax error, unexpected '$i' (T_VARIABLE) in [E:\WAMP\www\pitchv2\app\Controller\MatchesController.php, line 48]
+2014-04-14 01:49:45 Error: [FatalErrorException] syntax error, unexpected '$i' (T_VARIABLE)
+Request URL: /pitchv2/Matches/add/%5B%22201010101010%22%5D
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 48)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 48, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\WAMP\www\pit...', 48, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-14 01:49:58 Error: [MissingViewException] View file "E:\WAMP\www\pitchv2\app\View\Matches\add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'E:\\WAMP\\www\\pitchv2\\app\\View\\Matches\\add.ctp',
+)
+Request URL: /pitchv2/Matches/add/%5B%22201010101010%22%5D
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-14 01:50:28 Error: [MissingViewException] View file "E:\WAMP\www\pitchv2\app\View\Matches\add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'E:\\WAMP\\www\\pitchv2\\app\\View\\Matches\\add.ctp',
+)
+Request URL: /pitchv2/Matches/add/%5B%22201010101010%22%5D
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-14 01:51:56 Error: Fatal Error (4): syntax error, unexpected 'debug' (T_STRING) in [E:\WAMP\www\pitchv2\app\Controller\MatchesController.php, line 24]
+2014-04-14 01:51:56 Error: [FatalErrorException] syntax error, unexpected 'debug' (T_STRING)
+Request URL: /pitchv2/Matches/add/%5B%22201010101010%22%5D
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 24)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 24, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\WAMP\www\pit...', 24, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-14 01:52:04 Error: Fatal Error (1): Call to undefined method AuthBBT::getAllUser() in [E:\WAMP\www\pitchv2\app\Controller\MatchesController.php, line 23]
+2014-04-14 01:52:04 Error: [FatalErrorException] Call to undefined method AuthBBT::getAllUser()
+Request URL: /pitchv2/Matches/add/%5B%22201010101010%22%5D
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\WAMP\www\pit...', 23)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\WAMP\www\pit...', 23, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\WAMP\www\pit...', 23, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-14 01:52:33 Error: [MissingViewException] View file "E:\WAMP\www\pitchv2\app\View\Matches\add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'E:\\WAMP\\www\\pitchv2\\app\\View\\Matches\\add.ctp',
+)
+Request URL: /pitchv2/Matches/add/%5B%22201010101010%22%5D
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-14 01:53:00 Error: [MissingViewException] View file "E:\WAMP\www\pitchv2\app\View\Matches\add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'E:\\WAMP\\www\\pitchv2\\app\\View\\Matches\\add.ctp',
+)
+Request URL: /pitchv2/Matches/add/%5B%22201010101010%22%5D
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-14 01:54:06 Error: [MissingViewException] View file "E:\WAMP\www\pitchv2\app\View\Matches\add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'E:\\WAMP\\www\\pitchv2\\app\\View\\Matches\\add.ctp',
+)
+Request URL: /pitchv2/Matches/add/%5B%22201010101010%22,%22201230620437%22%5D
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-14 01:55:22 Error: [MissingViewException] View file "E:\WAMP\www\pitchv2\app\View\Matches\add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'E:\\WAMP\\www\\pitchv2\\app\\View\\Matches\\add.ctp',
+)
+Request URL: /pitchv2/Matches/add/%5B%22201010101010%22,%22201230620437%22%5D
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-14 01:55:41 Error: [MissingViewException] View file "E:\WAMP\www\pitchv2\app\View\Matches\add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'E:\\WAMP\\www\\pitchv2\\app\\View\\Matches\\add.ctp',
+)
+Request URL: /pitchv2/Matches/add/%5B%22201010101010%22,%22201230620437%22%5D
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-14 01:56:01 Error: [MissingViewException] View file "E:\WAMP\www\pitchv2\app\View\Matches\add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'E:\\WAMP\\www\\pitchv2\\app\\View\\Matches\\add.ctp',
+)
+Request URL: /pitchv2/Matches/add/%5B%22201010101010%22,%22201230620437%22%5D
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-14 01:56:28 Error: [MissingViewException] View file "E:\WAMP\www\pitchv2\app\View\Matches\add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'E:\\WAMP\\www\\pitchv2\\app\\View\\Matches\\add.ctp',
+)
+Request URL: /pitchv2/Matches/add/%5B%22201010101010%22,%22201230620437%22%5D
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-14 01:56:56 Error: [MissingViewException] View file "E:\WAMP\www\pitchv2\app\View\Matches\add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'E:\\WAMP\\www\\pitchv2\\app\\View\\Matches\\add.ctp',
+)
+Request URL: /pitchv2/Matches/add/%5B%22201010101010%22,%22201230620437%22%5D
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-14 01:58:40 Error: [MissingViewException] View file "E:\WAMP\www\pitchv2\app\View\Matches\add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'E:\\WAMP\\www\\pitchv2\\app\\View\\Matches\\add.ctp',
+)
+Request URL: /pitchv2/Matches/add/%5B%22201010101010%22,%22201230620437%22%5D
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-14 02:01:07 Error: [MissingViewException] View file "E:\WAMP\www\pitchv2\app\View\Matches\add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'E:\\WAMP\\www\\pitchv2\\app\\View\\Matches\\add.ctp',
+)
+Request URL: /pitchv2/Matches/add/%5B%22201010101010%22,%22201230620437%22%5D
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-14 02:01:14 Error: [MissingViewException] View file "E:\WAMP\www\pitchv2\app\View\Matches\add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'E:\\WAMP\\www\\pitchv2\\app\\View\\Matches\\add.ctp',
+)
+Request URL: /pitchv2/Matches/add/%5B%22201010101010%22,%2220123062a0437%22%5D
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-14 02:01:23 Error: [MissingViewException] View file "E:\WAMP\www\pitchv2\app\View\Matches\add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'E:\\WAMP\\www\\pitchv2\\app\\View\\Matches\\add.ctp',
+)
+Request URL: /pitchv2/Matches/add/%5B%22201010101010%22,%22201230620437%22%5D
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-14 11:24:13 Error: Fatal Error (1): Call to a member function read() on a non-object in [E:\WAMP\www\pitchv2\app\Controller\AppController.php, line 75]
+2014-04-14 11:24:13 Error: [FatalErrorException] Call to a member function read() on a non-object
+Request URL: /pitchv2/Users/login
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'E:\WAMP\www\pit...', 75)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'E:\WAMP\www\pit...', 75, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'E:\WAMP\www\pit...', 75, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-14 11:39:06 Error: Fatal Error (4): syntax error, unexpected ''Assignments'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [E:\WAMP\www\pitchv2\app\Controller\AppController.php, line 55]
+2014-04-14 11:39:06 Error: [FatalErrorException] syntax error, unexpected ''Assignments'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /pitchv2/Assignments/showAssignmentDetail/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 55)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 55, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\WAMP\www\pit...', 55, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-14 11:56:27 Error: [PDOException] SQLSTATE[HY000]: General error: 1364 Field 'assignment_id' doesn't have a default value
+Request URL: /pitchv2/Matches/register/2
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('INSERT INTO `pi...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(1004): DboSource->execute('INSERT INTO `pi...')
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(1744): DboSource->create(Object(Match), Array, Array)
+#4 E:\WAMP\www\pitchv2\app\Controller\MatchesController.php(43): Model->save(Array)
+#5 [internal function]: MatchesController->register('2')
+#6 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(MatchesController), Array)
+#7 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#8 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#9 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-04-14 12:29:28 Error: Fatal Error (1): Function name must be a string in [E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php, line 206]
+2014-04-14 12:29:28 Error: [FatalErrorException] Function name must be a string
+Request URL: /pitchv2/Assignments/showAssignmentDetail/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Function name m...', 'E:\WAMP\www\pit...', 206)
+#1 [internal function]: ErrorHandler::handleError(1, 'Function name m...', 'E:\WAMP\www\pit...', 206, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Function name m...', 'E:\WAMP\www\pit...', 206, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-14 13:12:55 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 14:00:57 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 14:01:33 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 14:01:44 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 14:01:55 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 14:15:49 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 14:15:56 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 14:30:35 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 14:40:38 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 14:41:55 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 14:42:24 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 14:42:25 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 14:51:02 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 15:23:17 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 15:23:48 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 15:26:57 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 15:26:58 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 15:27:00 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 15:27:01 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 15:33:10 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 15:33:19 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 15:33:34 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 15:33:35 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(173): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(103): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 16:03:48 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [E:\WAMP\www\pitchv2\app\Controller\AppController.php, line 40]
+2014-04-14 16:03:48 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /pitchv2/Users/showUserInformation
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 40)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 40, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\WAMP\www\pit...', 40, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-14 16:08:00 Error: [MissingActionException] Action ProjectsController::checkTimetable() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => 'checkTimetable',
+)
+Request URL: /pitchv2/Projects/checkTimetable
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-14 16:12:38 Error: [MissingActionException] Action ProjectsController::checkTimetable() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => 'checkTimetable',
+)
+Request URL: /pitchv2/Projects/checkTimetable
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-14 17:31:46 Error: [MissingViewException] View file "E:\WAMP\www\pitchv2\app\View\Matches\add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'E:\\WAMP\\www\\pitchv2\\app\\View\\Matches\\add.ctp',
+)
+Request URL: /pitchv2/Matches/add/%5B%22201010101010%22,%22201230620437%22%5D
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(MatchesController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-14 18:15:21 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(163): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(93): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 18:15:35 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(163): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(93): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 18:16:05 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(163): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(93): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 18:16:18 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(163): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(93): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 18:16:58 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')  ORDER BY `pitch_times` DESC LIMIT 3' at line 1
+Request URL: /pitchv2/Assignments/recommend/1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `num` , ...', Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `num` , ...', Array, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Model\Datasource\DboSource.php(539): DboSource->fetchAll('SELECT `num` , ...')
+#4 [internal function]: DboSource->query('SELECT `num` , ...')
+#5 E:\WAMP\www\pitchv2\lib\Cake\Model\Model.php(3061): call_user_func_array(Array, Array)
+#6 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(163): Model->query('SELECT `num` , ...')
+#7 E:\WAMP\www\pitchv2\app\Controller\AssignmentsController.php(93): AssignmentsController->recommendUser('a0', 'a0', 3, Array)
+#8 [internal function]: AssignmentsController->recommend('1')
+#9 E:\WAMP\www\pitchv2\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(AssignmentsController), Array)
+#10 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 E:\WAMP\www\pitchv2\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AssignmentsController), Object(CakeRequest), Object(CakeResponse))
+#12 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-14 18:55:30 Error: Fatal Error (1): Call to undefined function getSomeUsers() in [E:\WAMP\www\pitchv2\app\Controller\UsersController.php, line 142]
+2014-04-14 18:55:30 Error: [FatalErrorException] Call to undefined function getSomeUsers()
+Request URL: /pitchv2/Users/showAllUsers
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'E:\WAMP\www\pit...', 142)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'E:\WAMP\www\pit...', 142, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'E:\WAMP\www\pit...', 142, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-14 19:33:55 Error: Fatal Error (4): syntax error, unexpected ';' in [E:\WAMP\www\pitchv2\app\Controller\UsersController.php, line 148]
+2014-04-14 19:33:55 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /pitchv2/Users/showAllUsers
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 148)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 148, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\WAMP\www\pit...', 148, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-14 19:36:03 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [E:\WAMP\www\pitchv2\app\Controller\UsersController.php, line 163]
+2014-04-14 19:36:03 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /pitchv2/Users/showAllUsers
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 163)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 163, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\WAMP\www\pit...', 163, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-14 19:36:27 Error: Fatal Error (4): syntax error, unexpected ';' in [E:\WAMP\www\pitchv2\app\Controller\UsersController.php, line 173]
+2014-04-14 19:36:27 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /pitchv2/Users/showAllUsers
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 173)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 173, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\WAMP\www\pit...', 173, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-14 19:53:57 Error: Fatal Error (4): syntax error, unexpected '$condition' (T_VARIABLE) in [E:\WAMP\www\pitchv2\app\View\Users\show_all_users.ctp, line 3]
+2014-04-14 19:53:57 Error: [FatalErrorException] syntax error, unexpected '$condition' (T_VARIABLE)
+Request URL: /pitchv2/Users/showAllUsers
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 3)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\WAMP\www\pit...', 3, Array)
+#2 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\WAMP\www\pit...', 3, Array)
+#3 E:\WAMP\www\pitchv2\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-15 02:03:30 Error: [MissingControllerException] Controller class UserController could not be found.
+Exception Attributes: array (
+  'class' => 'UserController',
+  'plugin' => NULL,
+)
+Request URL: /pitchv2/User/showAllUsers/-2
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-15 02:03:47 Error: [MissingControllerException] Controller class UserController could not be found.
+Exception Attributes: array (
+  'class' => 'UserController',
+  'plugin' => NULL,
+)
+Request URL: /pitchv2/User/showAllUsers/-1
+Stack Trace:
+#0 E:\WAMP\www\pitchv2\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

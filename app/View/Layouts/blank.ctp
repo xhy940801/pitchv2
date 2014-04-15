@@ -22,6 +22,6 @@
 	<script src="<?php echo $this->webroot.'viewPlugins/bootstrap/js/bootstrap.min.js'; ?>"></script>
 	<div id="content">
 		<?php echo $this->fetch('content'); ?>
-	</div><?php echo $this->element('sql_dump'); ?>
+	</div>
 </body>
 </html>

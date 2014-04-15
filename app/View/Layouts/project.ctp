@@ -21,35 +21,15 @@
         <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
         <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-<script type = "text/javascript" > 
-	$(document).ready(function () {
-		var numCount = 2;
-		var urlStr = window.location.pathname;
-		var urlArr = urlStr.split('/');
-		var urlStr = '';
-		for (var i = 1; i < urlArr.length && i < numCount + 1; i++)
-			urlStr += '/' + urlArr[i];
-		if (urlArr[numCount ] == undefined || urlArr[numCount] == ''){
-			$('div.navbar li:has(a[href="' + urlStr + '"])').addClass("active");
-		} else {
-			$('div.navbar li.dropdown:has(a[href^="' + urlStr + '"])').addClass("active");
-		}
-		if (urlArr[numCount + 1] == undefined || urlArr[numCount + 1] == '' || urlArr[numCount + 1] == 'index') {
-			$('div.bs-docs-sidebar li:has(a[href="' + urlStr + '"])').addClass("active");
-			$('div.bs-docs-sidebar li:has(a[href="' + urlStr + '/' + '"])').addClass("active");
-			$('div.bs-docs-sidebar li:has(a[href^="' + urlStr + '/' + 'index' + '"])').addClass("active");
-		} else {
-			$('div.bs-docs-sidebar li:has(a[href^="' + urlStr + '/' + urlArr[numCount + 1] + '"])').addClass("active");
-		}
-	});
-</script>
-<script type = "text/javascript" >
-	var webroot = <?=$this->webroot?>;
-</script>
 </head>
 <body>
 
 	<?php echo $this->element('navigation_bar'); ?>
+	<script type="text/javascript">
+		var selected_bar  = "project-nav-bar";
+		var webroot = "<?=$this->webroot?>";
+	</script>
+	<?php echo $this->Html->script('active_navigation_bar'); ?>
 
 	<div class="container">
 		<div class="row">
@@ -65,7 +45,6 @@
 			</div>
 		</div>
 	</div>
-<?php echo $this->element('sql_dump'); ?>
 <!--	<div id="mid">
 		<div class="row">
 			<div class="nav nav-list">

@@ -33,6 +33,8 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller
 {
+	public $components = array('Cookie', 'Session');
+
 	protected $pitch_pages_nnlogin = array('Users' => array('login' => 1));
 	protected $pitch_authority = array('_default' => 13,
 		'Pages' => array(
@@ -49,7 +51,15 @@ class AppController extends Controller
 			'del' => 7)
 		);
 
+	protected $ajaxPage = array('_default' =>false,
+		'Assignments' => array(
+			'_default' => false,
+			'recommend' => true
+			)
+		);
+
 	protected $userInfo;
+
 	public function beforeFilter()
 	{
 		//check login
@@ -68,18 +78,31 @@ class AppController extends Controller
 			$this->redirect(array('controller' => 'Pages','action' => 'error404'));
 			exit();
 		}
+		$this->loadHelper();
+	}
+
+	private function loadHelper()
+	{
+		$this->helpers = array(
+		'Js', 'Html', 'Form', 'Time', 'Leisure', 'App',
+		'Authority' => array(
+			'pitch_pages_nnlogin' => $this->pitch_pages_nnlogin,
+			'pitch_authority' => $this->pitch_authority,
+			'userAuthority' => $this->userInfo['User']['authority']));
 	}
 
 	public function afterFilter()
 	{
-		$url = $this->Session->read('lastPos');
+		if($this->isAjaxPage())
+			return;
+		$url = $this->Cookie->read('lastPos');
 		if($url == null || $url != $this->params->url);
-			$this->Session->write('lastPos', $this->params->url);
+			$this->Cookie->write('lastPos', $this->params->url);
 	}
 
 	protected function returnLastPos()
 	{
-		$url = $this->Session->read('lastPos');
+		$url = $this->Cookie->read('lastPos');
 		if($url != null);
 			$this->redirect('/'.$url);
 	}
@@ -129,5 +152,17 @@ class AppController extends Controller
 		App::import('Vendor','AuthBBT');
 		$authBBT = new AuthBBT();
 		return $authBBT->getAllUsers(array('User.num' => $num));
+	}
+
+	protected function isAjaxPage()
+	{
+		$controller = $this->params['controller'];
+		$action = $this->params['action'];
+		if(isset($this->ajaxPage[$controller][$action]))
+			return $this->ajaxPage[$controller][$action];
+		else if(isset($this->ajaxPage[$controller]['_default']))
+			return $this->ajaxPage[$controller]['_default'];
+		else
+			return $this->ajaxPage['_default'];
 	}
 }

@@ -6,6 +6,12 @@ if(isset($successful))
 <script language="javascript" type="text/javascript" src="<?php echo $this->webroot.'viewPlugins/My97DatePicker/WdatePicker.js'; ?>"></script>
 <form class="form-horizontal" action="" method="post">
 	<div class="control-group">
+		<label class="control-label" for="name">Name</label>
+		<div class="controls">
+			<input type="text" id="name" placeholder="Name" name="name">
+		</div>
+	</div>
+	<div class="control-group">
 		<label class="control-label" for="inputStartLeisure">Start leisure</label>
 		<div class="controls">
 			<select name="start_leisure_d">

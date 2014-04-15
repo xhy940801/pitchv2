@@ -55,6 +55,8 @@
 		<div id="collapseTwo" class="accordion-body collapse">
 			<div class="accordion-inner">
         <?php
+$abcdefg = array('a','b','c','d','e','f','g');
+$time = array('一二节','三四节','五六节','七节','八节','晚上');
 if(isset($timetable[0]) && !empty($timetable[0]))
 {
 ?>
@@ -73,8 +75,6 @@ if(isset($timetable[0]) && !empty($timetable[0]))
 	    </tr>
 
 <?php
-$abcdefg = array('a','b','c','d','e','f','g');
-$time = array('一二节','三四节','五六节','七节','八节','晚上');
 for($i=0;$i<count($timetable[0]);++$i)
 	$theTable[$timetable[0][$i]['Timetable']['leisure']] = 1;
 for($i=0;$i<6;++$i)

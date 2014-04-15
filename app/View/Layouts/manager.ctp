@@ -23,20 +23,19 @@
     <![endif]-->
 </head>
 <body>
-	
-
 	<?php echo $this->element('navigation_bar'); ?>
 	<script type="text/javascript">
-		var selected_bar  = "users-nav-bar";
+		var selected_bar  = "manager-nav-bar";
 		var webroot = "<?=$this->webroot?>";
 	</script>
 	<?php echo $this->Html->script('active_navigation_bar'); ?>
+	
 	<div class="container">
 		<div class="row">
 			<div class="span3 bs-docs-sidebar hidden-phone">
 				<ul class="nav nav-list bs-docs-sidenav">
-					<li><a href="<?php echo $this->webroot.'Users/showUserInformation'; ?>"><i class="icon-chevron-right is-selected"></i>个人资料</a></li>
-					<li><a href="<?php echo $this->webroot.'Timetables/edit'; ?>"><i class="icon-chevron-right is-selected"></i>修改课表</a></li>
+					<li><a href="<?php echo $this->webroot.'Users/showAllUsers'; ?>"><i class="icon-chevron-right is-selected"></i>全员列表</a></li>
+					<li><a href="<?php echo $this->webroot.'Users/checkTimetable'; ?>"><i class="icon-chevron-right is-selected"></i>审核课表</a></li>
 					<li><a href="<?php echo $this->webroot.'Users/logout'; ?>"><i class="icon-chevron-right is-selected"></i>注销</a></li>
 				</ul>
 			</div>
@@ -45,6 +44,7 @@
 			</div>
 		</div>
 	</div>
+
 <!--	<div id="mid">
 		<div class="row">
 			<div class="nav nav-list">

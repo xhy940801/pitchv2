@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 App::uses('AppController', 'Controller');
 
@@ -12,16 +12,15 @@ class UsersController extends AppController
 		{
 			App::import('Vendor','AuthBBT');
 			$authBBT = new AuthBBT();
-			debug($user=$authBBT->checkUser($this->request->data['username'],$this->request->data['psd']));
+			$user=$authBBT->checkUser($this->request->data['username'],$this->request->data['psd']);
 			if(isset($user['returnData']['User']))
 			{
-				debug($user['returnData']['User']['num']);
 				$isExist = $this->User->find('first',array('conditions' => array('User.num' => $user['returnData']['User']['num']),'recursive' => -1));
 				$data = array(
 						'User' => array(
 							'num' => $user['returnData']['User']['num'],
+							'group_id' => $user['returnData']['User']['group_id'],
 							'department_id' => $user['returnData']['User']['department_id'],
-							'group_id' => $user['returnData']['User']['group_id']
 							));
 				if(empty($isExist))
 				{
@@ -42,7 +41,6 @@ class UsersController extends AppController
 				}
 				else
 				{
-					debug($isExist);
 					$this->User->id = $isExist['User']['id'];
 					 if(!$this->User->save($data))
 					 	cakelog::write(LOG_ERR,'Update data fail');
@@ -110,20 +108,91 @@ class UsersController extends AppController
 		$this->User->saveAll($u);
 	}*/
 
-	public function getSomeUsers($offset = 0,$limit = 0)
+	public function showAllUsers($condition = -1, $page = 1)
 	{
-		if($offset)
-		{
-			if($limit)
-				$result = $this->User->find('all',array('limit' => $limit,'offset' => $offset,'recursive' => 1));
-			else
-				$result = $this->User->find('all',array('offset' => $offset,'recursive' => -1));
-			$this->set('users',$result);
-		}
-	}
+		$limit = 10;
+		$this->set('limit', $limit);
+		$this->set('curPage', $page);
 
-	public function showAllUsers()
-	{
+		$this->layout = 'manager';
+		$this->set('condition', $condition);
+		App::import('Vendor','AuthBBT');
+		$authBBT = new AuthBBT();
+		$usersNum = array();
+		$users = array();
+
+		$this->loadModel('Department');
+		$departments = $this->Department->find('all');
+		$this->set('departments', $departments);
+		$this->set('userDepartment', $this->userInfo['User']['department_id']);
+
+		if($condition == $this->userInfo['User']['department_id'])
+			$condition = -1;
+		if($condition == -1)
+		{
+			$count = $this->User->find(
+				'count',
+				array(
+					'conditions' => array(
+						'User.department_id' => $this->userInfo['User']['department_id']
+						)
+					)
+				);
+			$this->set('count', $count);
+
+			$users = $this->User->find(
+				'all',
+				array(
+					'conditions' => array(
+						'User.department_id' => $this->userInfo['User']['department_id']
+						),
+					'limit' => $limit,
+					'page' => $page,
+					'recursive' => -1
+					)
+				);
+			$users = $this->getDetailInfo($users, $authBBT);
+		}
+		else if($condition > 0)
+		{
+			$count = $this->User->find(
+				'count',
+				array(
+					'conditions' => array(
+						'User.department_id' => $condition
+						)
+					)
+				);
+			$this->set('count', $count);
+
+			$users = $this->User->find(
+				'all', array(
+					'conditions' => array(
+						'User.department_id' => $condition
+						),
+					'limit' => $limit,
+					'page' => $page,
+					'recursive' => -1
+					)
+				);
+			$users = $this->getDetailInfo($users, $authBBT);
+		}
+		else if($condition == -2)
+		{
+			$count = $this->User->find('count');
+			$this->set('count', $count);
+
+			$users = $this->User->find(
+				'all', array(
+					'limit' => $limit,
+					'page' => $page,
+					'recursive' => -1
+					)
+				);
+			$users = $this->getDetailInfo($users, $authBBT);
+		}
+		$this->set('users', $users);
+		$this->set('condition', $condition);
 	}
 
 	public function showOneUser($uNum = null)
@@ -146,6 +215,35 @@ class UsersController extends AppController
 		$this->rander('show_user_information');
 	}
 
+	private function getDetailInfo($users, $authBBT)
+	{
+		for($i=0;$i<count($users);++$i)
+				$usersNum[$i] = $users[$i]['User']['num'];
+			
+		$userOtherInfo = $authBBT->getAllUsers(array('User.num' => $usersNum));
+		if(isset($userOtherInfo['returnData']))
+			$userOtherInfo = $userOtherInfo['returnData'];
+
+		$usersMap = array();
+		foreach ($userOtherInfo as $user)
+		{
+			$usersMap[$user['User']['num']] = $user;
+		}
+
+		$newUsers = array();
+
+		for($i=0;$i<count($users);++$i)
+		{
+			if(isset($usersMap[$users[$i]['User']['num']]))
+			{
+				$newUsers[$i] = $usersMap[$users[$i]['User']['num']];
+				$newUsers[$i]['User'] = array_merge($users[$i]['User'], $usersMap[$users[$i]['User']['num']]['User']);
+			}
+		}
+
+		return $newUsers;
+	}
+
 	private function getOne($uNum = null,$uId = null)
 	{
 		$result = array('timetable' => array(),'info' => array(),'error' => '');
@@ -154,7 +252,6 @@ class UsersController extends AppController
 			$result['error'] = 'IPERROR';
 			return $result;
 		}
-		debug($this->userInfo);
 		App::import('Vendor','AuthBBT');
 		$authBBT = new AuthBBT();
 		$info = $authBBT->getOneUser(array('User.num' => $uNum));
@@ -181,13 +278,15 @@ class UsersController extends AppController
 		}
 	}
 
-	private function setUserSession($User)
+	private function setUserSession($user)
 	{
 		$information = array(
 			'User'=>array(
-				'num' => $User['User']['num'],
-				'id' => $User['User']['id'],
-				'authority' => $User['User']['authority']
+				'num' => $user['User']['num'],
+				'id' => $user['User']['id'],
+				'authority' => $user['User']['authority'],
+				'department_id' => $user['User']['department_id'],
+				'group_id' => $user['User']['group_id']
 				));
 		$this->Session->write('userInfo',$information);
 	}

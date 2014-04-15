@@ -1,38 +1,30 @@
-<table class="table">
-	<thead>
-		<tr>
-			<th>姓名：</th><th>学号：</th><th>性别：</th><th>部门：</th><th>手机：</th><th>短号：</th><th>已摆摊次数：</th><th>操作：</th>
-		</tr>
-	</thead>
-	<?php
-	$usersNum = array();
-	foreach ($users as $user)
-	{
-		array_push($usersNum, $user['User']['num']);
-	?>
-	<tr>
-		<td><?=$user['Detail']['name']?></td>
-		<td><?=$user['User']['num']?></td>
-		<td><?=$user['Detail']['sex']?></td>
-		<td><?=$user['Department']['name']?></td>
-		<td><?=$user['Detail']['mobile']?></td>
-		<td><?=$user['Detail']['shortMobile']?></td>
-		<td><?=$user['User']['pitch_times']?></td>
-		<td><?=$this->Authority->npLink('增加',
-											array('controller' => 'Matches', 'action' => 'add',
-												json_encode(array($user['User']['num']))),
-											array('class' => 'add-pitch-user'))?></td>
-	</tr>
-	<?php
-	}
-	?>
-	<tr>
-		<th>总计人数：</th>
-		<th  colspan="6"><?=count($users)?></th>
-		<th>
-			<?=$this->Authority->npLink('添加全部',
-											array('controller' => 'Matches', 'action' => 'add', json_encode($usersNum)),
-											array('class' => 'add-pitch-user'))?>
-		</th>
-	</tr>
-</table>
+<?php
+$usersNum = array();
+$userInfo = array();
+foreach ($users as $user)
+{
+	array_push($usersNum, $user['User']['num']);
+	$info = array(
+		'name' => $user['Detail']['name'],
+		'num' => $user['User']['num'],
+		'sex' => $user['Detail']['sex'],
+		'department_name' => $user['Department']['name'],
+		'mobile' => $user['Detail']['mobile'],
+		'short_mobile' =>$user['Detail']['shortMobile'],
+		'pitch_times' => $user['User']['pitch_times'],
+		'operator' => $this->Authority->npLink('增加',
+				array('controller' => 'Matches', 'action' => 'add',
+					$assignmentId,
+					json_encode(array($user['User']['num']))
+					),
+				array('class' => 'add-pitch-user')
+			)
+		);
+	array_push($userInfo, $info);
+}
+$userInfo['user_count'] = count($users);
+$userInfo['all_users'] = $this->Authority->npLink('添加全部',
+										array('controller' => 'Matches', 'action' => 'add', $assignmentId, json_encode($usersNum)),
+										array('class' => 'add-pitch-user'));
+echo json_encode($userInfo);
+?>

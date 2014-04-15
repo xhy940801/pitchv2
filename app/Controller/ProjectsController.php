@@ -29,7 +29,6 @@ class ProjectsController extends AppController
 	{
 		$projects = $this->Project->find('all', array('order' => 'Project.created DESC', 'limit' => $limit, 'offset' => $offset));
 		$this->set('projects',$projects);
-		debug($projects);
 	}
 
 	public function deleteProject($id = null)

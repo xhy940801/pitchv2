@@ -1,3 +1,4 @@
+<div id="paddinHead"></div>
 <div class="accordion" id="accordion2">
 <?php
 $i=0;

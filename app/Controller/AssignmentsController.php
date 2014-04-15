@@ -15,16 +15,6 @@ class AssignmentsController extends AppController
 	// 		'pitch_pages_nnlogin' => $this->pitch_pages_nnlogin,
 	// 		'pitch_authority' => $this->pitch_authority,
 	// 		'userAuthority' => $this->userInfo['User']['authority']));
-	public function beforeFilter()
-	{
-		parent::beforeFilter();
-		$this->helpers = array(
-		'Js', 'Html', 'Form', 'Time', 'Leisure', 'App',
-		'Authority' => array(
-			'pitch_pages_nnlogin' => $this->pitch_pages_nnlogin,
-			'pitch_authority' => $this->pitch_authority,
-			'userAuthority' => $this->userInfo['User']['authority']));
-	}
 
 	public function addAssignment($id = null)
 	{
@@ -43,6 +33,23 @@ class AssignmentsController extends AppController
 		}
 	}
 
+	public function showAssignmentDetail($id = null)
+	{
+		if($id)
+		{
+			App::import('Vendor','AuthBBT');
+			$assignment = $this->Assignment->find('first',
+				array('conditions' => array('Assignment.id' => $id), 'recursive' => 1));
+			$authBBT = new AuthBBT();
+			$assignment = $this->makeMatch($assignment, $authBBT);
+			$this->set('assignment', $assignment);
+
+			$this->loadModel('Group');
+			$groups = $this->Group->find('all', array('recursive' => -1));
+			$this->set('groups', $groups);
+		}
+	}
+
 	public function showAssignments($id = null)
 	{
 		if($id)
@@ -53,30 +60,7 @@ class AssignmentsController extends AppController
 			$authBBT = new AuthBBT();
 			for($i=0;$i<count($assignments);++$i)
 			{
-				$assignments[$i]['MatchSigned'] = array();
-				$assignments[$i]['MatchUnsigned'] = array();
-				for($j=0;$j<count($assignments[$i]['Match']);++$j)
-				{
-					$s = 0;
-					$us = 0;
-					$user = $authBBT->getOneUser(array('User.num' => $assignments[$i]['Match'][$j]['user_num']));
-					if(isset($user['returnData']) && $user['error'] == '0')
-					{
-						$user = $user['returnData'];
-						unset($user['Group']);
-						if($assignments[$i]['Match'][$j]['signed'] == 0)
-						{
-							$assignments[$i]['MatchUnsigned'][$us] = $assignments[$i]['Match'][$j];
-							$assignments[$i]['MatchUnsigned'][$us++]['User'] = $user;
-						}
-						else if($assignments[$i]['Match'][$j]['signed'] == 1)
-						{
-							$assignments[$i]['MatchSigned'][$s] = $assignments[$i]['Match'][$j];
-							$assignments[$i]['MatchSigned'][$s++]['User'] = $user;
-						}
-					}
-				}
-				unset($assignments[$i]['Match']);
+				$assignments[$i] = $this->makeMatch($assignments[$i], $authBBT);
 			}
 
 			$this->loadModel('Department');
@@ -94,42 +78,51 @@ class AssignmentsController extends AppController
 		}
 	}
 
-	public function recommend($id = null, $group = '')
+	public function recommend($id = null, $groups = '[]')
 	{
+		$groups = $this->decodeGroup($groups);
 		$this->layout = 'ajax';
 		$userInfoList = array();
 		if($id != null)
 		{
+			App::import('Vendor','AuthBBT');
+			$authBBT = new AuthBBT();
+
 			$assignment = $this->Assignment->find('first', array('conditions' => array('Assignment.id' => $id), 'recursive' => 1));
 			$the_number_needed = $assignment['Assignment']['the_number_needed'] - count($assignment['Match']);
-			$users = $this->recommendUser($assignment['Assignment']['start_leisure'], $assignment['Assignment']['end_leisure'], $the_number_needed);
+			$users = $this->recommendUser($assignment['Assignment']['start_leisure'], $assignment['Assignment']['end_leisure'], $the_number_needed, $groups);
 			$userList = array();
 			for($i=0;$i<count($users);++$i)
 			{
 				$userList[$i] = $users[$i]['User']['num'];
 			}
-			$userList[$i] = '201230620437';
-			$userInfoList = $this->getSomeUserInfoByNum($userList);
+			$userInfoList = $authBBT->getAllUsers(array('num' => $userList));
 			if(isset($userInfoList['returnData']))
-				$userInfoList = $userInfoList['returnData'];
-			for($i=0;$i<count($userInfoList);++$i)
 			{
-				if(isset($usersPitchInfo[$i]['User']['pitch_times']))
-					$userInfoList[$i]['User']['pitch_times'] = $users[$i]['User']['pitch_times'];
-				else
-					$userInfoList[$i]['User']['pitch_times'] = 0;
+				$userInfoList = $userInfoList['returnData'];
+				for($i=0;$i<count($userInfoList);++$i)
+				{
+					if(isset($usersPitchInfo[$i]['User']['pitch_times']))
+						$userInfoList[$i]['User']['pitch_times'] = $users[$i]['User']['pitch_times'];
+					else
+						$userInfoList[$i]['User']['pitch_times'] = 0;
+				}
 			}
+			else
+				$userInfoList = array();
 		}
 		$this->set('users', $userInfoList);
+		$this->set('assignmentId', $id);
 	}
 
-	private function decodeGroup($group)
+	private function decodeGroup($groups)
 	{
-		$group = json_decode($group);
-		for($i=0;$i<count($group);++$i)
+		$groups = json_decode($groups);
+		for($i=0;$i<count($groups);++$i)
 		{
-			$group[$i] = intval($group[$i]);
+			$groups[$i] = intval($groups[$i]);
 		}
+		return $groups;
 	}
 
 	private function recommendUser($start_leisure, $end_leisure, $the_number_needed, $groupId = array('1'))
@@ -171,6 +164,35 @@ class AssignmentsController extends AppController
 			return $row;
 		}
 		return array();
+	}
+
+	private function makeMatch($assignment, $authBBT)
+	{
+		$assignment['MatchSigned'] = array();
+		$assignment['MatchUnsigned'] = array();
+		$s = 0;
+		$us = 0;
+		for($j=0;$j<count($assignment['Match']);++$j)
+		{
+			$user = $authBBT->getOneUser(array('User.num' => $assignment['Match'][$j]['user_num']));
+			if(isset($user['returnData']) && $user['error'] == '0')
+			{
+				$user = $user['returnData'];
+				unset($user['Group']);
+				if($assignment['Match'][$j]['signed'] == 0)
+				{
+					$assignment['MatchUnsigned'][$us] = $assignment['Match'][$j];
+					$assignment['MatchUnsigned'][$us++]['User'] = $user;
+				}
+				else if($assignment['Match'][$j]['signed'] == 1)
+				{
+					$assignment['MatchSigned'][$s] = $assignment['Match'][$j];
+					$assignment['MatchSigned'][$s++]['User'] = $user;
+				}
+			}
+		}
+		unset($assignment['Match']);
+		return $assignment;
 	}
 
 	// public function recommendUser()

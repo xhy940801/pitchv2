@@ -28,9 +28,15 @@ else
         </div>
         <div id="< ?php echo 'collapse'.$i; ?>" class="accordion-body collapse">
             <div class="accordion-inner"> -->
-				<table class="table">
+				<table class="table table-bordered table-hover">
 					<thead>
-						<tr><th cospan="2"><?php echo '任务'.$i; ?></th></tr>
+						<tr>
+							<th cospan="2"><?=$assignment['Assignment']['name']?></th>
+							<th>
+								<?=$this->Html->link('任务详情', 
+									array('controller' => 'Assignments', 'action' => 'showAssignmentDetail', $assignment['Assignment']['id']))?>
+							</th>
+						</tr>
 					</thead>
 					<tr>
 						<td>所属项目名称：</td><td><?php echo $assignment['Project']['name']; ?></td>
@@ -53,85 +59,8 @@ else
 					</tr>
 				</table>
 
-				<div class="accordion-group">
-					<div class="accordion-heading">
-						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="<?php echo '#collapse'.$i; ?>">
-							任务人员信息：
-						</a>
-					</div>
-					<div id="<?php echo 'collapse'.$i; ?>" class="accordion-body collapse">
-						<div class="accordion-inner">
-							<table class="table">
-								<thead>
-									<caption><strong>已签到人员：</strong></caption>
-									<tr>
-										<th>姓名：</th><th>学号：</th><th>性别：</th><th>部门：</th><th>手机：</th><th>短号：</th><th>操作：</th>
-									</tr>
-								</thead>
-								<?php foreach ($assignment['MatchSigned'] as $match)
-								{
-									$user = $match['User'];
-								?>
-								<tr>
-									<td><?=$user['Detail']['name']?></td>
-									<td><?=$user['User']['num']?></td>
-									<td><?=$user['Detail']['sex']?></td>
-									<td><?=$user['Department']['name'];?></td>
-									<td><?=$user['Detail']['mobile']?></td>
-									<td><?=$user['Detail']['shortMobile']?></td>
-									<td>
-										<?=$this->Authority->npLink('删除', array('controller' => 'Matches', 'action' => 'del', $match['id']))?>
-									</td>
-								</tr>
-								<?php 
-								}
-								unset($match);
-								?>
-								<tr>
-									<th>总计人数：</th><td colspan="6"><?=count($assignment['MatchSigned'])?></td>
-								</tr>
-							</table>
-
-							<table class="table">
-								<thead>
-									<caption><strong>未签到人员：</strong></caption>
-									<tr>
-										<th>姓名：</th><th>学号：</th><th>性别：</th><th>部门：</th><th>手机：</th><th>短号：</th><th>操作：</th>
-									</tr>
-								</thead>
-								<?php foreach ($assignment['MatchUnsigned'] as $match)
-								{
-									$user = $match['User'];
-								?>
-								<tr>
-									<td><?=$user['Detail']['name']?></td>
-									<td><?=$user['User']['num']?></td>
-									<td><?=$user['Detail']['sex']?></td>
-									<td><?=$user['Department']['name'];?></td>
-									<td><?=$user['Detail']['mobile']?></td>
-									<td><?=$user['Detail']['shortMobile']?></td>
-									<td>
-										<?=$this->Authority->npLink('签到', array('controller' => 'Matches', 'action' => 'register', $match['id']))?>
-										<?=$this->Authority->npLink('删除', array('controller' => 'Matches', 'action' => 'del', $match['id']))?>
-									</td>
-								</tr>
-								<?php 
-								}
-								unset($match);
-								?>
-								<tr>
-									<th>总计人数：</th><td colspan="6"><?=count($assignment['MatchUnsigned'])?></td>
-								</tr>
-							</table>
-							<a class="recommendUserButton" href="<?=$this->webroot.'Assignments/recommend/'.$assignment['Assignment']['id']?>">
-								推荐名单
-							</a>
-							<div class="recommendUser"></div>
-						</div>
-        			</div>
-    			</div>
+				
     			<div class="paddingBTElements"></div>
-    			<div class="BBTDivider"></div>
     			<div class="paddingBTElements"></div>
 <?php
 		++$i;
